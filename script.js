@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryNames = {
     alle: 'Alle Produkte',
     maedchen: '👗 Mädchen',
+    kleider: '👗 Kleider',
     jungen: '👕 Jungen',
     baby: '🍼 Baby',
     kleinkind: '🧒 Kleinkind',
@@ -171,6 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Highlight cards (new section)
+  document.querySelectorAll('.hc-link[data-filter]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      applyFilter(a.dataset.filter);
+      setTimeout(() => scrollToEl('#shop'), 80);
+    });
+  });
+
   // Desktop dropdown category links
   document.querySelectorAll('.dropdown-menu a[data-filter]').forEach(a => {
     a.addEventListener('click', e => {
@@ -186,6 +196,18 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       applyFilter(a.dataset.filter);
       setTimeout(() => scrollToEl('#shop'), 50);
+    });
+  });
+
+  // Category strip pills
+  document.querySelectorAll('.cat-pill[data-filter]').forEach(pill => {
+    pill.addEventListener('click', e => {
+      e.preventDefault();
+      const filter = pill.dataset.filter;
+      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      applyFilter(filter);
+      setTimeout(() => scrollToEl('#shop'), 80);
     });
   });
 
@@ -458,14 +480,46 @@ document.addEventListener('DOMContentLoaded', () => {
     reviewSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
-  /* ── Kontaktformular ──────────────────────────────────── */
+  /* ── Kontaktformular – sendet direkt an Carolina ─────── */
   const contactForm    = document.getElementById('contactForm');
   const contactSuccess = document.getElementById('contactSuccess');
-  contactForm?.addEventListener('submit', e => {
+  contactForm?.addEventListener('submit', async e => {
     e.preventDefault();
-    contactForm.style.display = 'none';
-    contactSuccess.style.display = 'block';
-    contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const origText = btn.innerHTML;
+    btn.innerHTML = '⏳ Wird gesendet...';
+    btn.disabled = true;
+
+    const data = {
+      name:    document.getElementById('contactName').value,
+      email:   document.getElementById('contactEmail').value,
+      phone:   document.getElementById('contactPhone').value || 'Nicht angegeben',
+      subject: document.getElementById('contactSubject').value || 'Sonstiges',
+      message: document.getElementById('contactMsg').value,
+      _subject: `Neue Nachricht – Estrellas de Colores`,
+      _captcha: 'false',
+    };
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/estrellas-de-colores@outlook.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.success === 'true' || json.success === true) {
+        contactForm.style.display = 'none';
+        contactSuccess.style.display = 'block';
+        contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        btn.innerHTML = '❌ Fehler – bitte direkt mailen';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.innerHTML = origText;
+      btn.disabled = false;
+      alert('Verbindungsfehler. Bitte schreib uns direkt an estrellas-de-colores@outlook.com');
+    }
   });
 
   /* ── Newsletter ───────────────────────────────────────── */
