@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estrellas de Colores – Stijlvolle Kindermode in Swolgen</title>
-  <meta name="description" content="Estrellas de Colores – Het adres voor stijlvolle kindermode in Swolgen. Voor kinderen van 0 t/m 14 jaar. Zaterdags geopend van 10:00 tot 15:00 uur." />
+  <title>Estrellas de Colores – Stilvolle Kindermode in Swolgen</title>
+  <meta name="description" content="Estrellas de Colores – Die Adresse für stilvolle Kindermode in Swolgen. Für Kinder von 0 bis 14 Jahren. Samstags geöffnet von 10:00 bis 15:00 Uhr." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
@@ -16,7 +16,7 @@
   ============================================================ -->
   <header id="header">
     <div class="header-top">
-      <span>📦 Gratis advies in onze winkel · Zaterdags 10:00–15:00 · Van Weedtstraat 4, Swolgen</span>
+      <span>📦 Kostenlose Beratung im Geschäft · Samstags 10:00–15:00 · Van Weedtstraat 4, Swolgen</span>
     </div>
     <nav class="navbar" id="navbar">
       <a href="#home" class="logo-link">
@@ -33,35 +33,88 @@
         </div>
       </a>
 
-      <div class="navbar-right">
-        <button class="cart-btn" id="cartBtn" aria-label="Winkelmandje openen">
-          🛒
-          <span class="cart-badge" id="cartBadge" style="display:none">0</span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu openen">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-
+      <!-- Desktop nav links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li class="dropdown">
-          <a href="#collectie" class="nav-link">Collectie <span class="arrow">▾</span></a>
+          <a href="#shop" class="nav-link">Kollektion <span class="arrow">▾</span></a>
           <ul class="dropdown-menu">
-            <li><a href="#meisjes">Meisjes</a></li>
-            <li><a href="#jongens">Jongens</a></li>
-            <li><a href="#baby">Baby (0–2 jaar)</a></li>
-            <li><a href="#peuter">Peuter (2–4 jaar)</a></li>
-            <li><a href="#accessoires">Accessoires</a></li>
+            <li><a href="#shop" data-filter="maedchen">👗 Mädchen</a></li>
+            <li><a href="#shop" data-filter="jungen">👕 Jungen</a></li>
+            <li><a href="#shop" data-filter="baby">🍼 Baby (0–2 J.)</a></li>
+            <li><a href="#shop" data-filter="kleinkind">🧒 Kleinkind (2–4 J.)</a></li>
+            <li><a href="#shop" data-filter="jogginghosen">🩳 Jogginghosen</a></li>
+            <li><a href="#shop" data-filter="accessoires">🎀 Accessoires</a></li>
           </ul>
         </li>
-        <li><a href="#nieuw" class="nav-link">Nieuw binnen</a></li>
-        <li><a href="#over-ons" class="nav-link">Over ons</a></li>
-        <li><a href="#recensies" class="nav-link">Recensies</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#shop" class="nav-link">Neu eingetroffen</a></li>
+        <li><a href="#ueber-uns" class="nav-link">Über uns</a></li>
+        <li><a href="#bewertungen" class="nav-link">Bewertungen</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
       </ul>
+
+      <div class="navbar-right">
+        <button class="cart-btn" id="cartBtn" aria-label="Warenkorb öffnen">
+          🛒
+          <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
+
+  <!-- ============================================================
+       MOBILE MENU (Hamburger)
+  ============================================================ -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobiles Menü">
+    <div class="mobile-menu-header">
+      <div class="logo">
+        <div class="logo-stars"><span class="star s1">★</span><span class="star s2">★</span><span class="star s3">★</span></div>
+        <div class="logo-text"><span class="logo-main">Estrellas</span><span class="logo-sub">de colores</span></div>
+      </div>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menü schließen">✕</button>
+    </div>
+
+    <div class="mobile-menu-body">
+      <a href="#home" class="mobile-nav-item" data-close>🏠 Home</a>
+
+      <div class="mobile-section-title">Kollektion</div>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="alle" data-close>
+        <span class="mobile-cat-icon" style="background:#f3e5f5">✨</span> Alle Produkte
+      </a>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="maedchen" data-close>
+        <span class="mobile-cat-icon" style="background:#fce4ec">👗</span> Mädchen
+      </a>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="jungen" data-close>
+        <span class="mobile-cat-icon" style="background:#e3f2fd">👕</span> Jungen
+      </a>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="baby" data-close>
+        <span class="mobile-cat-icon" style="background:#fff9c4">🍼</span> Baby (0–2 J.)
+      </a>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="kleinkind" data-close>
+        <span class="mobile-cat-icon" style="background:#e8f5e9">🧒</span> Kleinkind (2–4 J.)
+      </a>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="jogginghosen" data-close>
+        <span class="mobile-cat-icon" style="background:#e8eaf6">🩳</span> Jogginghosen
+      </a>
+      <a href="#shop" class="mobile-nav-item cat-link" data-filter="accessoires" data-close>
+        <span class="mobile-cat-icon" style="background:#fce4ec">🎀</span> Accessoires
+      </a>
+
+      <div class="mobile-section-title">Info</div>
+      <a href="#ueber-uns"  class="mobile-nav-item" data-close>💜 Über uns</a>
+      <a href="#bewertungen" class="mobile-nav-item" data-close>⭐ Bewertungen</a>
+      <a href="#kontakt"    class="mobile-nav-item" data-close>📞 Kontakt</a>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <a href="tel:+31478785459" class="mobile-contact-btn">📱 +31 (0)478 - 785 459</a>
+      <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="mobile-contact-btn facebook">👍 Facebook</a>
+    </div>
+  </nav>
 
   <!-- ============================================================
        HERO SECTION
@@ -78,24 +131,24 @@
       <span class="floating-star fs8">●</span>
     </div>
     <div class="hero-content">
-      <p class="hero-label">Kindermode voor de allerkleinsten t/m 14 jaar</p>
+      <p class="hero-label">Kindermode für die Kleinen bis 14 Jahre</p>
       <h1 class="hero-title">
-        Het adres voor<br/>
-        <span class="highlight-purple">stijlvolle</span>
-        <span class="highlight-script"> kindermode</span>
+        Die Adresse für<br/>
+        <span class="highlight-purple">stilvolle</span>
+        <span class="highlight-script"> Kindermode</span>
       </h1>
       <p class="hero-sub">
-        Ontdek onze kleurrijke collectie voor meisjes, jongens en baby's.<br/>
-        Altijd verrassend, altijd betaalbaar – in het hart van Swolgen.
+        Entdecke unsere bunte Kollektion für Mädchen, Jungen und Babys.<br/>
+        Immer überraschend, immer erschwinglich – im Herzen von Swolgen.
       </p>
       <div class="hero-buttons">
-        <a href="#collectie" class="btn btn-primary">Bekijk collectie</a>
-        <a href="#over-ons" class="btn btn-outline">Over ons</a>
+        <a href="#shop" class="btn btn-primary">Kollektion entdecken</a>
+        <a href="#ueber-uns" class="btn btn-outline">Über uns</a>
       </div>
       <div class="hero-badges">
-        <div class="badge"><span>👶</span> 0 t/m 14 jaar</div>
-        <div class="badge"><span>📅</span> Zaterdag open</div>
-        <div class="badge"><span>📍</span> Swolgen</div>
+        <div class="badge"><span>👶</span> 0 bis 14 Jahre</div>
+        <div class="badge"><span>📅</span> Samstag geöffnet</div>
+        <div class="badge"><span>📍</span> Swolgen, NL</div>
       </div>
     </div>
     <div class="hero-image">
@@ -109,7 +162,7 @@
               <div class="hanger" style="--c:#F5A623">👚</div>
               <div class="hanger" style="--c:#9C27B0">🩱</div>
             </div>
-            <p class="store-visual-tag">Nieuwe Collectie 2025</p>
+            <p class="store-visual-tag">Neue Kollektion 2025</p>
           </div>
         </div>
       </div>
@@ -124,148 +177,145 @@
       <div class="usp-item">
         <span class="usp-icon">🌟</span>
         <div>
-          <strong>Stijlvolle merken</strong>
-          <p>Zorgvuldig geselecteerde kindermode</p>
+          <strong>Stilvolle Marken</strong>
+          <p>Sorgfältig ausgewählte Kindermode</p>
         </div>
       </div>
       <div class="usp-item">
         <span class="usp-icon">💛</span>
         <div>
-          <strong>Persoonlijk advies</strong>
-          <p>Carolina helpt u graag verder</p>
+          <strong>Persönliche Beratung</strong>
+          <p>Carolina hilft dir gerne weiter</p>
         </div>
       </div>
       <div class="usp-item">
         <span class="usp-icon">🎨</span>
         <div>
-          <strong>Kleurrijke collectie</strong>
-          <p>Voor elk kind de juiste stijl</p>
+          <strong>Bunte Kollektion</strong>
+          <p>Für jedes Kind den richtigen Stil</p>
         </div>
       </div>
       <div class="usp-item">
         <span class="usp-icon">📍</span>
         <div>
-          <strong>Gratis parkeren</strong>
-          <p>Bij de kerk of DJ Timmie Tirol Platz</p>
+          <strong>Kostenloses Parken</strong>
+          <p>Beim Kirchplatz & Timmie Tirol Platz</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       COLLECTIE CATEGORIES
+       KATEGORIE KARTEN
   ============================================================ -->
-  <section class="section" id="collectie">
+  <section class="section" id="kollektionen">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Onze collectie</span>
-        <h2>Shop per categorie</h2>
-        <p>Voor ieder kind de perfecte outfit – van pasgeboren tot tiener</p>
+        <span class="section-tag">Unsere Kollektion</span>
+        <h2>Nach Kategorie shoppen</h2>
+        <p>Für jedes Kind das perfekte Outfit – vom Neugeborenen bis zum Teenager</p>
       </div>
       <div class="category-grid">
-        <a href="#meisjes" class="category-card cat-meisjes" id="meisjes">
+        <a href="#shop" class="category-card cat-maedchen" data-filter="maedchen">
           <div class="cat-icon">👗</div>
           <div class="cat-overlay">
-            <h3>Meisjes</h3>
-            <p>Jurken, tops, broeken & meer</p>
-            <span class="cat-btn">Bekijk alles →</span>
+            <h3>Mädchen</h3>
+            <p>Kleider, Tops, Hosen & mehr</p>
+            <span class="cat-btn">Alle anzeigen →</span>
           </div>
-          <div class="cat-bg-stars">
-            <span>★</span><span>★</span><span>●</span>
-          </div>
+          <div class="cat-bg-stars"><span>★</span><span>★</span><span>●</span></div>
         </a>
-        <a href="#jongens" class="category-card cat-jongens" id="jongens">
+        <a href="#shop" class="category-card cat-jungen" data-filter="jungen">
           <div class="cat-icon">👕</div>
           <div class="cat-overlay">
-            <h3>Jongens</h3>
-            <p>T-shirts, jassen, jeans & meer</p>
-            <span class="cat-btn">Bekijk alles →</span>
+            <h3>Jungen</h3>
+            <p>T-Shirts, Jacken, Jeans & mehr</p>
+            <span class="cat-btn">Alle anzeigen →</span>
           </div>
-          <div class="cat-bg-stars">
-            <span>★</span><span>●</span><span>★</span>
-          </div>
+          <div class="cat-bg-stars"><span>★</span><span>●</span><span>★</span></div>
         </a>
-        <a href="#baby" class="category-card cat-baby" id="baby">
+        <a href="#shop" class="category-card cat-baby" data-filter="baby">
           <div class="cat-icon">🍼</div>
           <div class="cat-overlay">
             <h3>Baby</h3>
-            <p>Zacht & lief voor 0–2 jaar</p>
-            <span class="cat-btn">Bekijk alles →</span>
+            <p>Weich & süß für 0–2 Jahre</p>
+            <span class="cat-btn">Alle anzeigen →</span>
           </div>
-          <div class="cat-bg-stars">
-            <span>●</span><span>★</span><span>★</span>
-          </div>
+          <div class="cat-bg-stars"><span>●</span><span>★</span><span>★</span></div>
         </a>
-        <a href="#peuter" class="category-card cat-peuter" id="peuter">
+        <a href="#shop" class="category-card cat-jogging" data-filter="jogginghosen">
+          <div class="cat-icon">🩳</div>
+          <div class="cat-overlay">
+            <h3>Jogginghosen</h3>
+            <p>Bequem & stylisch für jeden Tag</p>
+            <span class="cat-btn">Alle anzeigen →</span>
+          </div>
+          <div class="cat-bg-stars"><span>●</span><span>★</span><span>●</span></div>
+        </a>
+        <a href="#shop" class="category-card cat-kleinkind" data-filter="kleinkind">
           <div class="cat-icon">🧒</div>
           <div class="cat-overlay">
-            <h3>Peuter</h3>
-            <p>Speels & comfortabel, 2–4 jaar</p>
-            <span class="cat-btn">Bekijk alles →</span>
+            <h3>Kleinkind</h3>
+            <p>Verspielt & bequem, 2–4 Jahre</p>
+            <span class="cat-btn">Alle anzeigen →</span>
           </div>
-          <div class="cat-bg-stars">
-            <span>★</span><span>●</span><span>●</span>
-          </div>
+          <div class="cat-bg-stars"><span>★</span><span>●</span><span>●</span></div>
         </a>
-        <a href="#accessoires" class="category-card cat-accessoires" id="accessoires">
+        <a href="#shop" class="category-card cat-accessoires" data-filter="accessoires">
           <div class="cat-icon">🎀</div>
           <div class="cat-overlay">
             <h3>Accessoires</h3>
-            <p>Tassen, sjaals, mutsen & meer</p>
-            <span class="cat-btn">Bekijk alles →</span>
+            <p>Taschen, Schals, Mützen & mehr</p>
+            <span class="cat-btn">Alle anzeigen →</span>
           </div>
-          <div class="cat-bg-stars">
-            <span>●</span><span>★</span><span>●</span>
-          </div>
-        </a>
-        <a href="#nieuw" class="category-card cat-sale" id="nieuw">
-          <div class="cat-icon">✨</div>
-          <div class="cat-overlay">
-            <h3>Nieuw binnen</h3>
-            <p>De laatste aankomsten</p>
-            <span class="cat-btn">Ontdek nu →</span>
-          </div>
-          <div class="cat-bg-stars">
-            <span>★</span><span>★</span><span>★</span>
-          </div>
+          <div class="cat-bg-stars"><span>●</span><span>★</span><span>●</span></div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       NIEUW BINNEN – FEATURED PRODUCTS
+       SHOP – PRODUCT CATALOG WITH FILTER
   ============================================================ -->
-  <section class="section section-light" id="nieuw">
+  <section class="section section-light" id="shop">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Vers binnengekomen</span>
-        <h2>Nieuw in de winkel</h2>
-        <p>Ontdek de nieuwste stukken – elke week iets verrassends</p>
+        <span class="section-tag">Produktkatalog</span>
+        <h2 id="shopTitle">Alle Produkte</h2>
+        <p>Entdecke unsere bunte Auswahl – jede Woche Neues!</p>
       </div>
-      <div class="products-grid">
 
-        <!-- Product 1 -->
-        <div class="product-card"
-             data-id="p1"
-             data-name="Bloemenjurk Zomer"
-             data-price="29.95"
-             data-emoji="👗">
-          <div class="product-img" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0);">
+      <!-- Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="alle">Alle</button>
+        <button class="filter-btn" data-filter="maedchen">👗 Mädchen</button>
+        <button class="filter-btn" data-filter="jungen">👕 Jungen</button>
+        <button class="filter-btn" data-filter="baby">🍼 Baby</button>
+        <button class="filter-btn" data-filter="kleinkind">🧒 Kleinkind</button>
+        <button class="filter-btn" data-filter="jogginghosen">🩳 Jogginghosen</button>
+        <button class="filter-btn" data-filter="accessoires">🎀 Accessoires</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="products-grid" id="productsGrid">
+
+        <!-- Mädchen -->
+        <div class="product-card" data-category="maedchen" data-id="p1" data-name="Blumenkleid Sommer" data-price="29.95" data-emoji="👗">
+          <div class="product-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)">
             <span class="product-emoji">👗</span>
-            <span class="product-badge new">Nieuw</span>
+            <span class="product-badge new">Neu</span>
           </div>
           <div class="product-info">
-            <span class="product-cat">Meisjes · 4–8 jaar</span>
-            <h4>Bloemenjurk Zomer</h4>
-            <p class="product-desc">Vrolijk gebloemde jurk van zachte katoenmix</p>
+            <span class="product-cat">Mädchen · 4–8 Jahre</span>
+            <h4>Blumenkleid Sommer</h4>
+            <p class="product-desc">Fröhliches Blumenkleid aus weicher Baumwollmischung</p>
             <div class="product-colors">
               <span class="color-dot" style="background:#E91E8C"></span>
               <span class="color-dot" style="background:#9C27B0"></span>
               <span class="color-dot" style="background:#FF9800"></span>
             </div>
             <div class="product-sizes">
-              <span class="size-label">Maat:</span>
+              <span class="size-label">Größe:</span>
               <button class="size-btn active" data-size="104">104</button>
               <button class="size-btn" data-size="110">110</button>
               <button class="size-btn" data-size="116">116</button>
@@ -273,34 +323,55 @@
             </div>
             <div class="product-footer">
               <span class="product-price">€29,95</span>
-              <button class="add-to-cart btn-cart" aria-label="Toevoegen aan winkelmandje">
-                🛒 Toevoegen
-              </button>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
             </div>
           </div>
         </div>
 
-        <!-- Product 2 -->
-        <div class="product-card"
-             data-id="p2"
-             data-name="Grafisch T-shirt"
-             data-price="19.95"
-             data-emoji="👕">
-          <div class="product-img" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
-            <span class="product-emoji">👕</span>
-            <span class="product-badge new">Nieuw</span>
+        <div class="product-card" data-category="maedchen" data-id="p2" data-name="Glitzer-Leggings" data-price="17.95" data-emoji="✨">
+          <div class="product-img" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">
+            <span class="product-emoji">✨</span>
           </div>
           <div class="product-info">
-            <span class="product-cat">Jongens · 6–12 jaar</span>
-            <h4>Grafisch T-shirt</h4>
-            <p class="product-desc">Coole prints op 100% biologisch katoen</p>
+            <span class="product-cat">Mädchen · 3–10 Jahre</span>
+            <h4>Glitzer-Leggings</h4>
+            <p class="product-desc">Dehnbare Leggings mit schimmerndem Glitzereffekt</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#9C27B0"></span>
+              <span class="color-dot" style="background:#E91E8C"></span>
+              <span class="color-dot" style="background:#2196F3"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="98">98</button>
+              <button class="size-btn" data-size="110">110</button>
+              <button class="size-btn" data-size="122">122</button>
+              <button class="size-btn" data-size="134">134</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€17,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jungen -->
+        <div class="product-card" data-category="jungen" data-id="p3" data-name="Grafik T-Shirt" data-price="19.95" data-emoji="👕">
+          <div class="product-img" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">
+            <span class="product-emoji">👕</span>
+            <span class="product-badge new">Neu</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Jungen · 6–12 Jahre</span>
+            <h4>Grafik T-Shirt</h4>
+            <p class="product-desc">Coole Prints auf 100 % Bio-Baumwolle</p>
             <div class="product-colors">
               <span class="color-dot" style="background:#2196F3"></span>
               <span class="color-dot" style="background:#4CAF50"></span>
               <span class="color-dot" style="background:#FF5722"></span>
             </div>
             <div class="product-sizes">
-              <span class="size-label">Maat:</span>
+              <span class="size-label">Größe:</span>
               <button class="size-btn active" data-size="116">116</button>
               <button class="size-btn" data-size="128">128</button>
               <button class="size-btn" data-size="140">140</button>
@@ -308,69 +379,55 @@
             </div>
             <div class="product-footer">
               <span class="product-price">€19,95</span>
-              <button class="add-to-cart btn-cart" aria-label="Toevoegen aan winkelmandje">
-                🛒 Toevoegen
-              </button>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
             </div>
           </div>
         </div>
 
-        <!-- Product 3 -->
-        <div class="product-card"
-             data-id="p3"
-             data-name="Regenjas Regenboog"
-             data-price="44.95"
-             data-emoji="🧥">
-          <div class="product-img" style="background: linear-gradient(135deg, #fff9c4, #fff176);">
-            <span class="product-emoji">🧥</span>
-            <span class="product-badge">Favoriet</span>
+        <div class="product-card" data-category="jungen" data-id="p4" data-name="Cargo-Shorts" data-price="24.95" data-emoji="🩲">
+          <div class="product-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">
+            <span class="product-emoji">🩲</span>
           </div>
           <div class="product-info">
-            <span class="product-cat">Unisex · 2–6 jaar</span>
-            <h4>Regenjas Regenboog</h4>
-            <p class="product-desc">Waterafstotend en superschattig voor buiten</p>
+            <span class="product-cat">Jungen · 5–14 Jahre</span>
+            <h4>Cargo-Shorts</h4>
+            <p class="product-desc">Lässige Shorts mit praktischen Seitentaschen</p>
             <div class="product-colors">
-              <span class="color-dot" style="background:#F5A623"></span>
-              <span class="color-dot" style="background:#E91E8C"></span>
-              <span class="color-dot" style="background:#2196F3"></span>
+              <span class="color-dot" style="background:#4CAF50"></span>
+              <span class="color-dot" style="background:#795548"></span>
+              <span class="color-dot" style="background:#607D8B"></span>
             </div>
             <div class="product-sizes">
-              <span class="size-label">Maat:</span>
-              <button class="size-btn active" data-size="92">92</button>
-              <button class="size-btn" data-size="98">98</button>
-              <button class="size-btn" data-size="104">104</button>
-              <button class="size-btn" data-size="116">116</button>
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="110">110</button>
+              <button class="size-btn" data-size="122">122</button>
+              <button class="size-btn" data-size="134">134</button>
+              <button class="size-btn" data-size="146">146</button>
             </div>
             <div class="product-footer">
-              <span class="product-price">€44,95</span>
-              <button class="add-to-cart btn-cart" aria-label="Toevoegen aan winkelmandje">
-                🛒 Toevoegen
-              </button>
+              <span class="product-price">€24,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
             </div>
           </div>
         </div>
 
-        <!-- Product 4 -->
-        <div class="product-card"
-             data-id="p4"
-             data-name="Rompertjes Set (3-pack)"
-             data-price="24.95"
-             data-emoji="🩱">
-          <div class="product-img" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
+        <!-- Baby -->
+        <div class="product-card" data-category="baby" data-id="p5" data-name="Strampler-Set (3er Pack)" data-price="24.95" data-emoji="🩱">
+          <div class="product-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">
             <span class="product-emoji">🩱</span>
-            <span class="product-badge new">Nieuw</span>
+            <span class="product-badge new">Neu</span>
           </div>
           <div class="product-info">
-            <span class="product-cat">Baby · 0–24 mnd</span>
-            <h4>Rompertjes Set (3-pack)</h4>
-            <p class="product-desc">Zachte biologische katoen, ideaal als cadeautje</p>
+            <span class="product-cat">Baby · 0–24 Monate</span>
+            <h4>Strampler-Set (3er Pack)</h4>
+            <p class="product-desc">Weiches Bio-Baumwoll-Set, ideal als Geschenk</p>
             <div class="product-colors">
               <span class="color-dot" style="background:#4CAF50"></span>
               <span class="color-dot" style="background:#fce4ec"></span>
               <span class="color-dot" style="background:#fff9c4"></span>
             </div>
             <div class="product-sizes">
-              <span class="size-label">Maat:</span>
+              <span class="size-label">Größe:</span>
               <button class="size-btn active" data-size="56">56</button>
               <button class="size-btn" data-size="62">62</button>
               <button class="size-btn" data-size="68">68</button>
@@ -378,25 +435,243 @@
             </div>
             <div class="product-footer">
               <span class="product-price">€24,95</span>
-              <button class="add-to-cart btn-cart" aria-label="Toevoegen aan winkelmandje">
-                🛒 Toevoegen
-              </button>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
             </div>
           </div>
         </div>
 
+        <div class="product-card" data-category="baby" data-id="p6" data-name="Baby Mütze & Fäustlinge" data-price="12.95" data-emoji="🧢">
+          <div class="product-img" style="background:linear-gradient(135deg,#fff9c4,#fff176)">
+            <span class="product-emoji">🧢</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Baby · 0–12 Monate</span>
+            <h4>Baby Mütze & Fäustlinge</h4>
+            <p class="product-desc">Kuschelig weiches Set für die kälteren Tage</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#F5A623"></span>
+              <span class="color-dot" style="background:#fce4ec"></span>
+              <span class="color-dot" style="background:#e3f2fd"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="44">44</button>
+              <button class="size-btn" data-size="46">46</button>
+              <button class="size-btn" data-size="48">48</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€12,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kleinkind -->
+        <div class="product-card" data-category="kleinkind" data-id="p7" data-name="Regenjacke Regenbogen" data-price="44.95" data-emoji="🧥">
+          <div class="product-img" style="background:linear-gradient(135deg,#fff9c4,#fff176)">
+            <span class="product-emoji">🧥</span>
+            <span class="product-badge">Favorit</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Unisex · 2–6 Jahre</span>
+            <h4>Regenjacke Regenbogen</h4>
+            <p class="product-desc">Wasserabweisend und superschnuckelig für draußen</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#F5A623"></span>
+              <span class="color-dot" style="background:#E91E8C"></span>
+              <span class="color-dot" style="background:#2196F3"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="92">92</button>
+              <button class="size-btn" data-size="98">98</button>
+              <button class="size-btn" data-size="104">104</button>
+              <button class="size-btn" data-size="116">116</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€44,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="kleinkind" data-id="p8" data-name="Latzhose Bunt" data-price="22.95" data-emoji="👖">
+          <div class="product-img" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">
+            <span class="product-emoji">👖</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Kleinkind · 2–4 Jahre</span>
+            <h4>Latzhose Bunt</h4>
+            <p class="product-desc">Strapazierfähige Latzhose mit aufgestickten Sternen</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#2196F3"></span>
+              <span class="color-dot" style="background:#E91E8C"></span>
+              <span class="color-dot" style="background:#4CAF50"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="86">86</button>
+              <button class="size-btn" data-size="92">92</button>
+              <button class="size-btn" data-size="98">98</button>
+              <button class="size-btn" data-size="104">104</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€22,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jogginghosen -->
+        <div class="product-card" data-category="jogginghosen" data-id="p9" data-name="Jogginganzug Mädchen" data-price="34.95" data-emoji="🩳">
+          <div class="product-img" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">
+            <span class="product-emoji">🩳</span>
+            <span class="product-badge new">Neu</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Mädchen · 4–12 Jahre</span>
+            <h4>Jogginganzug Mädchen</h4>
+            <p class="product-desc">Weicher Fleece-Jogginganzug, bequem & warm</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#9C27B0"></span>
+              <span class="color-dot" style="background:#E91E8C"></span>
+              <span class="color-dot" style="background:#2196F3"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="104">104</button>
+              <button class="size-btn" data-size="116">116</button>
+              <button class="size-btn" data-size="128">128</button>
+              <button class="size-btn" data-size="140">140</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€34,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="jogginghosen" data-id="p10" data-name="Jogginghose Jungen" data-price="21.95" data-emoji="👟">
+          <div class="product-img" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9)">
+            <span class="product-emoji">👟</span>
+            <span class="product-badge new">Neu</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Jungen · 3–14 Jahre</span>
+            <h4>Jogginghose Jungen</h4>
+            <p class="product-desc">Elastische Baumwoll-Jogginghose mit Tunnelzug</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#3F51B5"></span>
+              <span class="color-dot" style="background:#4CAF50"></span>
+              <span class="color-dot" style="background:#607D8B"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="98">98</button>
+              <button class="size-btn" data-size="110">110</button>
+              <button class="size-btn" data-size="122">122</button>
+              <button class="size-btn" data-size="146">146</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€21,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="jogginghosen" data-id="p11" data-name="Jogginganzug Unisex" data-price="38.95" data-emoji="🏃">
+          <div class="product-img" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2)">
+            <span class="product-emoji">🏃</span>
+            <span class="product-badge">Beliebt</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Unisex · 4–14 Jahre</span>
+            <h4>Jogginganzug Unisex</h4>
+            <p class="product-desc">Sportlicher Look für Schule & Freizeit</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#00BCD4"></span>
+              <span class="color-dot" style="background:#FF5722"></span>
+              <span class="color-dot" style="background:#4CAF50"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="104">104</button>
+              <button class="size-btn" data-size="116">116</button>
+              <button class="size-btn" data-size="128">128</button>
+              <button class="size-btn" data-size="152">152</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€38,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessoires -->
+        <div class="product-card" data-category="accessoires" data-id="p12" data-name="Haarband-Set (5er)" data-price="9.95" data-emoji="🎀">
+          <div class="product-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)">
+            <span class="product-emoji">🎀</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Mädchen · alle Größen</span>
+            <h4>Haarband-Set (5er)</h4>
+            <p class="product-desc">Buntes Haarbänder-Set aus weichem Stoff</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#E91E8C"></span>
+              <span class="color-dot" style="background:#9C27B0"></span>
+              <span class="color-dot" style="background:#F5A623"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="Universal">Universal</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€9,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="accessoires" data-id="p13" data-name="Kinder-Rucksack" data-price="18.95" data-emoji="🎒">
+          <div class="product-img" style="background:linear-gradient(135deg,#fff9c4,#fff176)">
+            <span class="product-emoji">🎒</span>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Unisex · 3–10 Jahre</span>
+            <h4>Kinder-Rucksack</h4>
+            <p class="product-desc">Niedlicher kleiner Rucksack für Ausflüge</p>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#F5A623"></span>
+              <span class="color-dot" style="background:#2196F3"></span>
+              <span class="color-dot" style="background:#E91E8C"></span>
+            </div>
+            <div class="product-sizes">
+              <span class="size-label">Größe:</span>
+              <button class="size-btn active" data-size="Universal">Universal</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">€18,95</span>
+              <button class="add-to-cart btn-cart">🛒 In den Korb</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+      <!-- Empty state -->
+      <div class="no-products" id="noProducts" style="display:none">
+        <span>🔍</span>
+        <p>Keine Produkte in dieser Kategorie gefunden.</p>
+        <button class="btn btn-outline" data-filter="alle" id="showAllBtn">Alle Produkte anzeigen</button>
       </div>
-      <div class="section-cta">
-        <p>Kom langs in onze winkel en laat u verrassen door het volledige assortiment!</p>
-        <a href="#contact" class="btn btn-primary">Winkelinfo & openingstijden</a>
-      </div>
+
     </div>
   </section>
 
   <!-- ============================================================
-       OVER ONS
+       ÜBER UNS
   ============================================================ -->
-  <section class="section" id="over-ons">
+  <section class="section" id="ueber-uns">
     <div class="container">
       <div class="about-grid">
         <div class="about-visual">
@@ -404,16 +679,16 @@
             <div class="about-store-img">
               <div class="store-icon">🏪</div>
               <p>Estrellas de Colores</p>
-              <span>Swolgen</span>
+              <span>Swolgen, Niederlande</span>
             </div>
           </div>
           <div class="about-card-float">
             <span class="float-icon">⭐</span>
-            <strong>Open sinds 2024</strong>
+            <strong>Seit 2024 offen</strong>
           </div>
           <div class="about-card-float about-card-float2">
             <span class="float-icon">👧</span>
-            <strong>0 t/m 14 jaar</strong>
+            <strong>0 bis 14 Jahre</strong>
           </div>
           <div class="about-stars-deco" aria-hidden="true">
             <span style="color:#E91E8C">★</span>
@@ -423,108 +698,95 @@
           </div>
         </div>
         <div class="about-content">
-          <span class="section-tag">Over ons</span>
-          <h2>Hallo, ik ben Carolina!</h2>
+          <span class="section-tag">Über uns</span>
+          <h2>Hallo, ich bin Carolina!</h2>
           <p class="about-lead">
-            Met veel liefde en passie heb ik <strong>Estrellas de Colores</strong> opgericht –
-            het adres voor stijlvolle en betaalbare kindermode in Swolgen.
+            Mit viel Liebe und Leidenschaft habe ich <strong>Estrellas de Colores</strong> gegründet –
+            die Adresse für stilvolle und erschwingliche Kindermode in Swolgen.
           </p>
           <p>
-            Als moeder weet ik hoe belangrijk het is dat kinderkleding niet alleen mooi is,
-            maar ook comfortabel en duurzaam. In onze winkel vindt u een zorgvuldig
-            samengestelde collectie voor meisjes, jongens en baby's van 0 t/m 14 jaar.
+            Als Mutter weiß ich, wie wichtig es ist, dass Kinderkleidung nicht nur schön ist,
+            sondern auch bequem und langlebig. In unserem Geschäft findest du eine sorgfältig
+            zusammengestellte Kollektion für Mädchen, Jungen und Babys von 0 bis 14 Jahren.
           </p>
           <p>
-            Elke week komen er nieuwe stukken binnen – van vrolijke dagelijkse outfits tot
-            bijzondere gelegenheidskledij. Kom langs op zaterdag en laat u persoonlijk adviseren!
+            Jede Woche kommen neue Stücke rein – von fröhlichen Alltagsoutfits bis hin zu
+            besonderen Anlässen. Komm samstags vorbei und lass dich persönlich beraten!
           </p>
           <div class="about-highlights">
             <div class="about-hl">
               <span class="hl-icon" style="background:#fce4ec">💕</span>
-              <div>
-                <strong>Met hart & ziel</strong>
-                <p>Elk stuk is persoonlijk geselecteerd</p>
-              </div>
+              <div><strong>Mit Herz & Seele</strong><p>Jedes Stück persönlich ausgesucht</p></div>
             </div>
             <div class="about-hl">
               <span class="hl-icon" style="background:#e3f2fd">🎨</span>
-              <div>
-                <strong>Kleurrijk & speels</strong>
-                <p>Mode die bij kinderen past</p>
-              </div>
+              <div><strong>Bunt & verspielt</strong><p>Mode, die zu Kindern passt</p></div>
             </div>
             <div class="about-hl">
               <span class="hl-icon" style="background:#e8f5e9">🌿</span>
-              <div>
-                <strong>Kwaliteit voorop</strong>
-                <p>Zachte stoffen, eerlijke prijzen</p>
-              </div>
+              <div><strong>Qualität zuerst</strong><p>Weiche Stoffe, faire Preise</p></div>
             </div>
           </div>
-          <a href="#contact" class="btn btn-primary">Kom langs!</a>
+          <a href="#kontakt" class="btn btn-primary">Besuch uns!</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       OPENINGSTIJDEN & WINKELINFO
+       ÖFFNUNGSZEITEN & LADENINFO
   ============================================================ -->
-  <section class="section section-purple" id="winkelinfo">
+  <section class="section section-purple" id="ladeninfo">
     <div class="container">
       <div class="info-grid">
         <div class="info-card">
           <span class="info-icon">🕙</span>
-          <h3>Openingstijden</h3>
+          <h3>Öffnungszeiten</h3>
           <table class="hours-table">
-            <tr><td>Maandag</td><td>Gesloten</td></tr>
-            <tr><td>Dinsdag</td><td>Gesloten</td></tr>
-            <tr><td>Woensdag</td><td>Gesloten</td></tr>
-            <tr><td>Donderdag</td><td>Gesloten</td></tr>
-            <tr><td>Vrijdag</td><td>Gesloten</td></tr>
-            <tr class="open-day"><td><strong>Zaterdag</strong></td><td><strong>10:00 – 15:00</strong></td></tr>
-            <tr><td>Zondag</td><td>Gesloten</td></tr>
+            <tr><td>Montag</td><td>Geschlossen</td></tr>
+            <tr><td>Dienstag</td><td>Geschlossen</td></tr>
+            <tr><td>Mittwoch</td><td>Geschlossen</td></tr>
+            <tr><td>Donnerstag</td><td>Geschlossen</td></tr>
+            <tr><td>Freitag</td><td>Geschlossen</td></tr>
+            <tr class="open-day"><td><strong>Samstag</strong></td><td><strong>10:00 – 15:00</strong></td></tr>
+            <tr><td>Sonntag</td><td>Geschlossen</td></tr>
           </table>
-          <p class="info-note">🎄 Bijzondere openingstijden mogelijk tijdens feestdagen – volg ons op Facebook!</p>
+          <p class="info-note">🎄 Besondere Öffnungszeiten an Feiertagen – folge uns auf Facebook!</p>
         </div>
         <div class="info-card">
           <span class="info-icon">📍</span>
-          <h3>Adres & Parkeren</h3>
+          <h3>Adresse & Parken</h3>
           <p class="info-address">
             Van Weedtstraat 4<br/>
             5866 BL Swolgen<br/>
-            Nederland
+            Niederlande
           </p>
           <div class="parking-info">
-            <p>🅿️ <strong>Gratis parkeren:</strong></p>
+            <p>🅿️ <strong>Kostenloses Parken:</strong></p>
             <ul>
-              <li>Bij de kerk</li>
+              <li>Beim Kirchplatz</li>
               <li>DJ Timmie Tirol Platz</li>
             </ul>
           </div>
           <a href="https://maps.google.com/?q=Van+Weedtstraat+4,+5866+BL+Swolgen" target="_blank" rel="noopener" class="btn btn-white">
-            📌 Route plannen
+            📌 Route planen
           </a>
         </div>
         <div class="info-card">
           <span class="info-icon">📞</span>
-          <h3>Contact</h3>
+          <h3>Kontakt</h3>
           <div class="contact-details">
             <a href="tel:+31478785459" class="contact-item">
-              <span>📱</span>
-              <span>+31 (0)478 - 785 459</span>
+              <span>📱</span><span>+31 (0)478 - 785 459</span>
             </a>
             <a href="mailto:estrellas-de-colores@outlook.com" class="contact-item">
-              <span>✉️</span>
-              <span>estrellas-de-colores@outlook.com</span>
+              <span>✉️</span><span>estrellas-de-colores@outlook.com</span>
             </a>
             <a href="https://www.estrellas-de-colores.nl" target="_blank" class="contact-item">
-              <span>🌐</span>
-              <span>www.estrellas-de-colores.nl</span>
+              <span>🌐</span><span>www.estrellas-de-colores.nl</span>
             </a>
             <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="contact-item">
-              <span>👍</span>
-              <span>Facebook pagina</span>
+              <span>👍</span><span>Facebook-Seite</span>
             </a>
           </div>
         </div>
@@ -533,71 +795,63 @@
   </section>
 
   <!-- ============================================================
-       RECENSIES
+       BEWERTUNGEN
   ============================================================ -->
-  <section class="section" id="recensies">
+  <section class="section" id="bewertungen">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Wat klanten zeggen</span>
-        <h2>Recensies</h2>
-        <p>Lees wat andere ouders over Estrellas de Colores vertellen</p>
+        <span class="section-tag">Was Kunden sagen</span>
+        <h2>Bewertungen</h2>
+        <p>Lies, was andere Eltern über Estrellas de Colores erzählen</p>
       </div>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">
-            "Wat een prachtige winkel! Carolina heeft ons zo goed geholpen bij het uitzoeken van een outfit voor mijn dochter.
-            De collectie is kleurrijk en van goede kwaliteit. We komen zeker terug!"
+            „Was für ein wunderschönes Geschäft! Carolina hat uns so gut dabei geholfen, ein Outfit
+            für meine Tochter auszusuchen. Die Kollektion ist bunt und von guter Qualität. Wir kommen
+            bestimmt wieder!"
           </p>
           <div class="review-author">
             <div class="review-avatar" style="background:#fce4ec">S</div>
-            <div>
-              <strong>Sandra M.</strong>
-              <span>Moeder van 2 kinderen</span>
-            </div>
+            <div><strong>Sandra M.</strong><span>Mutter von 2 Kindern</span></div>
           </div>
         </div>
         <div class="review-card review-featured">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">
-            "Eindelijk een echte kindermodeboetiek in de buurt! De kleding is super leuk en de prijzen zijn heel redelijk.
-            Mijn kinderen vinden het heerlijk om er te shoppen. Heel persoonlijke service!"
+            „Endlich ein richtiges Kindermode-Boutique in der Nähe! Die Kleidung ist super schön
+            und die Preise sind sehr fair. Meine Kinder lieben es, dort einzukaufen. Sehr persönlicher Service!"
           </p>
           <div class="review-author">
             <div class="review-avatar" style="background:#e3f2fd">M</div>
-            <div>
-              <strong>Marloes V.</strong>
-              <span>Vaste klant</span>
-            </div>
+            <div><strong>Marloes V.</strong><span>Stammkundin</span></div>
           </div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">
-            "We hebben hier de mooiste cadeausets voor baby's gevonden. Carolina denkt echt met je mee
-            en de verpakking was ook nog eens prachtig. Absolute aanrader!"
+            „Hier haben wir die schönsten Geschenksets für Babys gefunden. Carolina denkt wirklich
+            mit und die Verpackung war auch noch wunderschön. Absolute Empfehlung!"
           </p>
           <div class="review-author">
             <div class="review-avatar" style="background:#e8f5e9">L</div>
-            <div>
-              <strong>Lisa H.</strong>
-              <span>Oma van 3 kleinkinderen</span>
-            </div>
+            <div><strong>Lisa H.</strong><span>Oma von 3 Enkeln</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Review Form -->
+      <!-- Bewertungsformular -->
       <div class="review-form-wrapper">
-        <h3>Laat uw recensie achter</h3>
+        <h3>Deine Bewertung hinterlassen</h3>
         <form class="review-form" id="reviewForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="reviewName">Uw naam</label>
-              <input type="text" id="reviewName" placeholder="Bijv. Anna de Vries" required />
+              <label for="reviewName">Dein Name</label>
+              <input type="text" id="reviewName" placeholder="z.B. Anna Müller" required />
             </div>
             <div class="form-group">
-              <label>Beoordeling</label>
+              <label>Bewertung</label>
               <div class="star-rating" id="starRating">
                 <span class="star-btn" data-val="1">★</span>
                 <span class="star-btn" data-val="2">★</span>
@@ -609,87 +863,75 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="reviewText">Uw recensie</label>
-            <textarea id="reviewText" rows="4" placeholder="Vertel anderen over uw ervaring..." required></textarea>
+            <label for="reviewText">Deine Bewertung</label>
+            <textarea id="reviewText" rows="4" placeholder="Erzähl anderen von deinem Erlebnis..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Recensie versturen ✨</button>
+          <button type="submit" class="btn btn-primary">Bewertung absenden ✨</button>
         </form>
         <div id="reviewSuccess" class="success-msg" style="display:none">
-          ✅ Bedankt voor uw recensie! We nemen deze zo snel mogelijk door.
+          ✅ Vielen Dank für deine Bewertung! Wir prüfen sie so schnell wie möglich.
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       CONTACT FORM
+       KONTAKT
   ============================================================ -->
-  <section class="section section-light" id="contact">
+  <section class="section section-light" id="kontakt">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info-side">
-          <span class="section-tag">Neem contact op</span>
-          <h2>We horen graag van u!</h2>
-          <p>Heeft u een vraag over onze collectie, beschikbaarheid of wilt u iets reserveren?
-             Stuur ons een berichtje en we antwoorden zo snel mogelijk.</p>
-
+          <span class="section-tag">Kontakt aufnehmen</span>
+          <h2>Wir freuen uns von dir zu hören!</h2>
+          <p>Hast du eine Frage zur Kollektion, Verfügbarkeit oder möchtest etwas reservieren?
+             Schreib uns eine Nachricht und wir antworten so schnell wie möglich.</p>
           <div class="contact-quick">
-            <a href="tel:+31478785459" class="quick-btn">
-              <span>📱</span> Bellen
-            </a>
-            <a href="mailto:estrellas-de-colores@outlook.com" class="quick-btn">
-              <span>✉️</span> E-mailen
-            </a>
-            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="quick-btn">
-              <span>👍</span> Facebook
-            </a>
+            <a href="tel:+31478785459" class="quick-btn"><span>📱</span> Anrufen</a>
+            <a href="mailto:estrellas-de-colores@outlook.com" class="quick-btn"><span>✉️</span> E-Mail</a>
+            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="quick-btn"><span>👍</span> Facebook</a>
           </div>
-
           <div class="contact-opening">
-            <h4>🕙 Winkel bezoeken?</h4>
-            <p><strong>Zaterdag</strong> van 10:00 tot 15:00 uur</p>
+            <h4>🕙 Laden besuchen?</h4>
+            <p><strong>Samstag</strong> von 10:00 bis 15:00 Uhr</p>
             <p>Van Weedtstraat 4, 5866 BL Swolgen</p>
           </div>
         </div>
-
         <form class="contact-form" id="contactForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="contactName">Naam *</label>
-              <input type="text" id="contactName" placeholder="Uw volledige naam" required />
+              <label for="contactName">Name *</label>
+              <input type="text" id="contactName" placeholder="Dein vollständiger Name" required />
             </div>
             <div class="form-group">
-              <label for="contactEmail">E-mail *</label>
-              <input type="email" id="contactEmail" placeholder="uw@email.nl" required />
+              <label for="contactEmail">E-Mail *</label>
+              <input type="email" id="contactEmail" placeholder="deine@email.de" required />
             </div>
           </div>
           <div class="form-group">
-            <label for="contactPhone">Telefoonnummer</label>
-            <input type="tel" id="contactPhone" placeholder="+31 6 ..." />
+            <label for="contactPhone">Telefonnummer</label>
+            <input type="tel" id="contactPhone" placeholder="+49 ..." />
           </div>
           <div class="form-group">
-            <label for="contactSubject">Onderwerp</label>
+            <label for="contactSubject">Betreff</label>
             <select id="contactSubject">
-              <option value="">Selecteer een onderwerp</option>
-              <option>Vraag over collectie</option>
-              <option>Beschikbaarheid artikel</option>
-              <option>Cadeaubon</option>
-              <option>Reservering</option>
-              <option>Samenwerking</option>
-              <option>Anders</option>
+              <option value="">Betreff auswählen</option>
+              <option>Frage zur Kollektion</option>
+              <option>Artikelverfügbarkeit</option>
+              <option>Gutschein</option>
+              <option>Reservierung</option>
+              <option>Kooperation</option>
+              <option>Sonstiges</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="contactMsg">Uw bericht *</label>
-            <textarea id="contactMsg" rows="5" placeholder="Schrijf hier uw bericht..." required></textarea>
+            <label for="contactMsg">Deine Nachricht *</label>
+            <textarea id="contactMsg" rows="5" placeholder="Schreib hier deine Nachricht..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            Verstuur bericht ✨
-          </button>
+          <button type="submit" class="btn btn-primary btn-full">Nachricht senden ✨</button>
         </form>
-
         <div id="contactSuccess" class="success-msg" style="display:none">
-          ✅ Uw bericht is verstuurd! Carolina neemt zo snel mogelijk contact met u op.
+          ✅ Deine Nachricht wurde gesendet! Carolina meldet sich so schnell wie möglich.
         </div>
       </div>
     </div>
@@ -704,13 +946,13 @@
         <div class="newsletter-stars" aria-hidden="true">
           <span>★</span><span>●</span><span>★</span><span>●</span><span>★</span>
         </div>
-        <h2>Blijf op de hoogte!</h2>
-        <p>Ontvang nieuws over nieuwe collecties, aanbiedingen en bijzondere openingstijden</p>
+        <h2>Immer auf dem Laufenden!</h2>
+        <p>Erhalte News über neue Kollektionen, Angebote und besondere Öffnungszeiten</p>
         <form class="newsletter-form" id="newsletterForm">
-          <input type="email" placeholder="Uw e-mailadres" required />
-          <button type="submit" class="btn btn-white">Aanmelden</button>
+          <input type="email" placeholder="Deine E-Mail-Adresse" required />
+          <button type="submit" class="btn btn-white">Anmelden</button>
         </form>
-        <p class="newsletter-note">📱 Of volg ons op <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener">Facebook</a> voor dagelijkse updates!</p>
+        <p class="newsletter-note">📱 Oder folge uns auf <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener">Facebook</a> für tägliche Updates!</p>
       </div>
     </div>
   </section>
@@ -725,52 +967,48 @@
           <div class="footer-brand">
             <div class="footer-logo">
               <div class="logo-stars small">
-                <span class="star s1">★</span>
-                <span class="star s2">★</span>
-                <span class="star s3">★</span>
+                <span class="star s1">★</span><span class="star s2">★</span><span class="star s3">★</span>
               </div>
               <div class="logo-text">
                 <span class="logo-main">Estrellas</span>
                 <span class="logo-sub">de colores</span>
               </div>
             </div>
-            <p class="footer-tagline">Het adres voor stijlvolle kindermode in Swolgen</p>
-            <p class="footer-tagline">Voor kinderen van 0 t/m 14 jaar</p>
+            <p class="footer-tagline">Die Adresse für stilvolle Kindermode in Swolgen</p>
+            <p class="footer-tagline">Für Kinder von 0 bis 14 Jahren</p>
             <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="social-btn facebook">
-              👍 Volg ons op Facebook
+              👍 Auf Facebook folgen
             </a>
           </div>
-
           <div class="footer-col">
-            <h4>Navigatie</h4>
+            <h4>Navigation</h4>
             <ul>
               <li><a href="#home">Home</a></li>
-              <li><a href="#collectie">Collectie</a></li>
-              <li><a href="#nieuw">Nieuw binnen</a></li>
-              <li><a href="#over-ons">Over ons</a></li>
-              <li><a href="#recensies">Recensies</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#shop">Kollektion</a></li>
+              <li><a href="#shop">Neu eingetroffen</a></li>
+              <li><a href="#ueber-uns">Über uns</a></li>
+              <li><a href="#bewertungen">Bewertungen</a></li>
+              <li><a href="#kontakt">Kontakt</a></li>
             </ul>
           </div>
-
           <div class="footer-col">
-            <h4>Collectie</h4>
+            <h4>Kategorien</h4>
             <ul>
-              <li><a href="#meisjes">Meisjes</a></li>
-              <li><a href="#jongens">Jongens</a></li>
-              <li><a href="#baby">Baby (0–2 jaar)</a></li>
-              <li><a href="#peuter">Peuter (2–4 jaar)</a></li>
-              <li><a href="#accessoires">Accessoires</a></li>
+              <li><a href="#shop" data-filter="maedchen">Mädchen</a></li>
+              <li><a href="#shop" data-filter="jungen">Jungen</a></li>
+              <li><a href="#shop" data-filter="baby">Baby (0–2 J.)</a></li>
+              <li><a href="#shop" data-filter="kleinkind">Kleinkind (2–4 J.)</a></li>
+              <li><a href="#shop" data-filter="jogginghosen">Jogginghosen</a></li>
+              <li><a href="#shop" data-filter="accessoires">Accessoires</a></li>
             </ul>
           </div>
-
           <div class="footer-col">
-            <h4>Winkelinfo</h4>
+            <h4>Ladeninfo</h4>
             <address>
-              <p>📍 Van Weedtstraat 4<br/>5866 BL Swolgen</p>
+              <p>📍 Van Weedtstraat 4<br/>5866 BL Swolgen, NL</p>
               <p>📱 <a href="tel:+31478785459">+31 (0)478 - 785 459</a></p>
               <p>✉️ <a href="mailto:estrellas-de-colores@outlook.com">estrellas-de-colores@outlook.com</a></p>
-              <p>🕙 Za: 10:00 – 15:00 uur</p>
+              <p>🕙 Sa: 10:00 – 15:00 Uhr</p>
             </address>
           </div>
         </div>
@@ -791,29 +1029,25 @@
   </footer>
 
   <!-- Back to top -->
-  <button class="back-to-top" id="backToTop" aria-label="Terug naar boven">↑</button>
+  <button class="back-to-top" id="backToTop" aria-label="Nach oben">↑</button>
 
   <!-- ============================================================
-       CART DRAWER
+       WARENKORB DRAWER
   ============================================================ -->
   <div class="cart-overlay" id="cartOverlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Winkelmandje">
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
     <div class="cart-drawer-header">
-      <h3>🛒 Winkelmandje</h3>
-      <button class="cart-close" id="cartClose" aria-label="Sluit winkelmandje">✕</button>
+      <h3>🛒 Warenkorb</h3>
+      <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">✕</button>
     </div>
-    <div class="cart-body" id="cartBody">
-      <!-- items injected by JS -->
-    </div>
+    <div class="cart-body" id="cartBody"></div>
     <div class="cart-drawer-footer" id="cartFooter" style="display:none">
       <div class="cart-subtotal">
-        <span>Subtotaal</span>
+        <span>Zwischensumme</span>
         <span id="cartSubtotal">€0,00</span>
       </div>
-      <p class="cart-shipping-note">🚚 Verzending wordt berekend bij checkout</p>
-      <button class="btn btn-primary btn-full" id="checkoutBtn">
-        Naar afrekenen →
-      </button>
+      <p class="cart-shipping-note">🚚 Versandkosten werden beim Checkout berechnet</p>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Zur Kasse →</button>
     </div>
   </aside>
 
@@ -821,10 +1055,10 @@
        CHECKOUT MODAL
   ============================================================ -->
   <div class="modal-overlay" id="checkoutOverlay"></div>
-  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Afrekenen">
-    <button class="modal-close" id="checkoutClose" aria-label="Sluit">✕</button>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Zur Kasse">
+    <button class="modal-close" id="checkoutClose" aria-label="Schließen">✕</button>
 
-    <!-- Step 1: Gegevens -->
+    <!-- Schritt 1: Daten -->
     <div class="checkout-step" id="step1">
       <div class="checkout-header">
         <div class="step-indicator">
@@ -834,54 +1068,52 @@
           <span class="step-line"></span>
           <span class="step">3</span>
         </div>
-        <h2>Uw gegevens</h2>
+        <h2>Deine Daten</h2>
       </div>
       <form id="checkoutForm1">
         <div class="form-row">
           <div class="form-group">
-            <label for="chkFirstName">Voornaam *</label>
+            <label for="chkFirstName">Vorname *</label>
             <input type="text" id="chkFirstName" placeholder="Anna" required />
           </div>
           <div class="form-group">
-            <label for="chkLastName">Achternaam *</label>
-            <input type="text" id="chkLastName" placeholder="de Vries" required />
+            <label for="chkLastName">Nachname *</label>
+            <input type="text" id="chkLastName" placeholder="Müller" required />
           </div>
         </div>
         <div class="form-group">
-          <label for="chkEmail">E-mailadres *</label>
-          <input type="email" id="chkEmail" placeholder="anna@email.nl" required />
+          <label for="chkEmail">E-Mail-Adresse *</label>
+          <input type="email" id="chkEmail" placeholder="anna@email.de" required />
         </div>
         <div class="form-group">
-          <label for="chkPhone">Telefoonnummer</label>
-          <input type="tel" id="chkPhone" placeholder="+31 6 ..." />
+          <label for="chkPhone">Telefonnummer</label>
+          <input type="tel" id="chkPhone" placeholder="+49 ..." />
         </div>
         <div class="form-row">
           <div class="form-group" style="flex:2">
-            <label for="chkStreet">Straat *</label>
-            <input type="text" id="chkStreet" placeholder="Hoofdstraat" required />
+            <label for="chkStreet">Straße *</label>
+            <input type="text" id="chkStreet" placeholder="Hauptstraße" required />
           </div>
           <div class="form-group" style="flex:1">
-            <label for="chkHouseNr">Huisnr *</label>
+            <label for="chkHouseNr">Nr. *</label>
             <input type="text" id="chkHouseNr" placeholder="12" required />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="chkPostcode">Postcode *</label>
-            <input type="text" id="chkPostcode" placeholder="1234 AB" required />
+            <label for="chkPostcode">PLZ *</label>
+            <input type="text" id="chkPostcode" placeholder="12345" required />
           </div>
           <div class="form-group">
-            <label for="chkCity">Plaats *</label>
-            <input type="text" id="chkCity" placeholder="Amsterdam" required />
+            <label for="chkCity">Ort *</label>
+            <input type="text" id="chkCity" placeholder="Berlin" required />
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">
-          Verder naar betaling →
-        </button>
+        <button type="submit" class="btn btn-primary btn-full">Weiter zur Zahlung →</button>
       </form>
     </div>
 
-    <!-- Step 2: Betaling -->
+    <!-- Schritt 2: Zahlung -->
     <div class="checkout-step" id="step2" style="display:none">
       <div class="checkout-header">
         <div class="step-indicator">
@@ -891,18 +1123,16 @@
           <span class="step-line"></span>
           <span class="step">3</span>
         </div>
-        <h2>Betaalwijze kiezen</h2>
+        <h2>Zahlungsart wählen</h2>
       </div>
-
       <div class="order-summary" id="orderSummary"></div>
-
       <div class="payment-methods">
-        <p class="payment-label">Kies uw betaalwijze:</p>
+        <p class="payment-label">Zahlungsart auswählen:</p>
         <div class="payment-grid">
           <label class="payment-option">
             <input type="radio" name="payment" value="ideal" checked />
             <span class="payment-card">
-              <span class="payment-icon ideal-icon">🏦</span>
+              <span class="payment-icon">🏦</span>
               <span class="payment-name">iDEAL</span>
             </span>
           </label>
@@ -910,7 +1140,7 @@
             <input type="radio" name="payment" value="creditcard" />
             <span class="payment-card">
               <span class="payment-icon">💳</span>
-              <span class="payment-name">Creditcard</span>
+              <span class="payment-name">Kreditkarte</span>
             </span>
           </label>
           <label class="payment-option">
@@ -928,65 +1158,53 @@
             </span>
           </label>
         </div>
-
-        <!-- iDEAL bank selector -->
         <div class="ideal-banks" id="idealBanks">
-          <label for="bankSelect">Selecteer uw bank:</label>
+          <label for="bankSelect">Deine Bank auswählen:</label>
           <select id="bankSelect">
-            <option value="">-- Kies uw bank --</option>
+            <option value="">-- Bank auswählen --</option>
             <option value="ABNANL2A">ABN AMRO</option>
             <option value="ASNBNL21">ASN Bank</option>
             <option value="BUNQNL2A">bunq</option>
             <option value="INGBNL2A">ING</option>
             <option value="KNABNL2H">Knab</option>
-            <option value="NNBANL2G">Nationale-Nederlanden</option>
             <option value="RABONL2U">Rabobank</option>
             <option value="RBRBNL21">RegioBank</option>
-            <option value="REVOLT21">Revolut</option>
             <option value="SNSBNL2A">SNS Bank</option>
             <option value="TRIONL2U">Triodos Bank</option>
           </select>
         </div>
       </div>
-
       <div class="checkout-total-bar">
-        <span>Totaal te betalen</span>
+        <span>Gesamt zu zahlen</span>
         <strong id="checkoutTotal">€0,00</strong>
       </div>
-
       <div class="mollie-notice">
-        <img src="https://www.mollie.com/external/icons/payment-methods/ideal.svg"
-             alt="iDEAL" width="32" onerror="this.style.display='none'" />
         <p>
-          Betalingen worden veilig verwerkt via
-          <strong>Mollie</strong> – de meest gebruikte betaalprovider van Nederland.
-          <br/>
-          <span>🔒 SSL-beveiligd · PCI DSS compliant</span>
+          Zahlungen werden sicher über <strong>Mollie</strong> abgewickelt –
+          der meistgenutzte Zahlungsanbieter der Niederlande.<br/>
+          <span>🔒 SSL-verschlüsselt · PCI DSS konform</span>
         </p>
       </div>
-
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <button class="btn btn-outline" id="backToStep1">← Terug</button>
-        <button class="btn btn-primary" id="payNowBtn" style="flex:1">
-          Nu betalen 🔒
-        </button>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-outline" id="backToStep1">← Zurück</button>
+        <button class="btn btn-primary" id="payNowBtn" style="flex:1">Jetzt bezahlen 🔒</button>
       </div>
     </div>
 
-    <!-- Step 3: Bevestiging -->
+    <!-- Schritt 3: Bestätigung -->
     <div class="checkout-step" id="step3" style="display:none">
       <div class="confirmation-icon">✅</div>
-      <h2>Bestelling geplaatst!</h2>
+      <h2>Bestellung aufgegeben!</h2>
       <p class="confirm-text">
-        Bedankt voor uw bestelling bij <strong>Estrellas de Colores</strong>!<br/>
-        U ontvangt een bevestiging per e-mail. Wij verwerken uw bestelling zo snel mogelijk.
+        Vielen Dank für deine Bestellung bei <strong>Estrellas de Colores</strong>!<br/>
+        Du erhältst eine Bestätigung per E-Mail. Wir bearbeiten deine Bestellung so schnell wie möglich.
       </p>
       <div class="confirm-details" id="confirmDetails"></div>
       <p class="confirm-sub">
-        Vragen? Bel <a href="tel:+31478785459">+31 (0)478 - 785 459</a>
-        of mail naar <a href="mailto:estrellas-de-colores@outlook.com">estrellas-de-colores@outlook.com</a>
+        Fragen? Ruf an: <a href="tel:+31478785459">+31 (0)478 - 785 459</a>
+        oder schreib an <a href="mailto:estrellas-de-colores@outlook.com">estrellas-de-colores@outlook.com</a>
       </p>
-      <button class="btn btn-primary btn-full" id="confirmDone">Terug naar de winkel</button>
+      <button class="btn btn-primary btn-full" id="confirmDone">Zurück zum Shop</button>
     </div>
   </div>
 

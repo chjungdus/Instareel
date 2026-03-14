@@ -888,6 +888,176 @@ address { font-style: normal; }
 
 
 /* ============================================================
+   MOBILE MENU (full-screen slide-in)
+   ============================================================ */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 1050;
+  backdrop-filter: blur(2px);
+}
+.mobile-menu-overlay.open { display: block; }
+
+.mobile-menu {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 320px; max-width: 92vw;
+  background: var(--white);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 8px 0 40px rgba(0,0,0,.15);
+  overflow-y: auto;
+}
+.mobile-menu.open { transform: translateX(0); }
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--light);
+}
+.mobile-menu-close {
+  background: var(--grey);
+  border: none;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.mobile-menu-body { flex: 1; padding: 12px 0; }
+
+.mobile-section-title {
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 16px 20px 6px;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--text);
+  transition: background .15s, color .15s;
+  cursor: pointer;
+}
+.mobile-nav-item:hover { background: var(--light); color: var(--purple); }
+
+.mobile-cat-icon {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.mobile-menu-footer {
+  padding: 16px 20px 24px;
+  border-top: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobile-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: .88rem;
+  background: var(--light);
+  color: var(--purple);
+  border: 1.5px solid var(--border);
+  transition: all .2s;
+}
+.mobile-contact-btn:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
+.mobile-contact-btn.facebook { background: #1877F2; color: #fff; border-color: #1877F2; }
+.mobile-contact-btn.facebook:hover { background: #0d65d9; }
+
+
+/* ============================================================
+   CATEGORY CARDS – remap names to German
+   ============================================================ */
+.cat-maedchen    { background: linear-gradient(160deg, #fce4ec 0%, #f48fb1 100%); }
+.cat-jungen      { background: linear-gradient(160deg, #e3f2fd 0%, #64b5f6 100%); }
+.cat-jogging     { background: linear-gradient(160deg, #e8eaf6 0%, #9fa8da 100%); }
+.cat-kleinkind   { background: linear-gradient(160deg, #e8f5e9 0%, #a5d6a7 100%); }
+
+
+/* ============================================================
+   FILTER BAR
+   ============================================================ */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 9px 18px;
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  background: var(--white);
+  font-family: var(--font-main);
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--purple); color: var(--purple); }
+.filter-btn.active {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(91,45,142,.3);
+}
+
+/* product hide animation */
+.product-card.hidden {
+  display: none;
+}
+.product-card.fade-in {
+  animation: fadeInUp .3s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.no-products {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-light);
+}
+.no-products span { font-size: 3rem; display: block; margin-bottom: 12px; }
+.no-products p { margin-bottom: 20px; font-size: 1rem; }
+
+@media (max-width: 560px) {
+  .filter-bar { gap: 6px; }
+  .filter-btn { padding: 7px 12px; font-size: .78rem; }
+}
+
+
+/* ============================================================
    CART & CHECKOUT – Added for e-commerce
    ============================================================ */
 
