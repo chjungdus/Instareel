@@ -179,21 +179,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const navSearch    = document.getElementById('navSearch');
   const mobileSearch = document.getElementById('mobileSearch');
-  [navSearch, mobileSearch].forEach(el => {
-    if (!el) return;
-    el.addEventListener('input', () => {
-      const q = el.value;
-      // Sync both search inputs
-      if (navSearch    && el !== navSearch)    navSearch.value    = q;
-      if (mobileSearch && el !== mobileSearch) mobileSearch.value = q;
-      if (q) {
-        searchProducts(q);
-        setTimeout(() => scrollToEl('#shop'), 50);
-      } else {
-        applyFilter('alle');
+
+  function handleSearch(q) {
+    // Sync both inputs
+    if (navSearch)    navSearch.value    = q;
+    if (mobileSearch) mobileSearch.value = q;
+
+    if (q.trim()) {
+      searchProducts(q);
+      // Close mobile menu so results are visible
+      if (mobileMenu && mobileMenu.classList.contains('open')) closeMobileMenu();
+      // Scroll to shop if not already there
+      const shopEl = document.getElementById('shop');
+      if (shopEl) {
+        const rect = shopEl.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) {
+          setTimeout(() => scrollToEl('#shop'), 60);
+        }
       }
-    });
-  });
+    } else {
+      applyFilter('alle');
+    }
+  }
+
+  if (navSearch)    navSearch.addEventListener('input',    () => handleSearch(navSearch.value));
+  if (mobileSearch) mobileSearch.addEventListener('input', () => handleSearch(mobileSearch.value));
 
   // Filter bar button clicks
   filterBtns.forEach(btn => {

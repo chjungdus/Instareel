@@ -56,8 +56,9 @@ address { font-style: normal; }
 }
 
 
-/* ── Sticky Header ──────────────────────────────────────────── */
+/* ── Sticky Header (desktop) / Fixed Header (mobile) ──────── */
 #header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1001;
@@ -360,47 +361,77 @@ address { font-style: normal; }
   box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 
-/* Hero Image side */
-.hero-image { position: relative; z-index: 2; display: flex; justify-content: center; }
-.hero-card-big {
-  width: 400px;
-  max-width: 100%;
-  height: 480px;
-  background: var(--white);
-  border-radius: 32px;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  border: 1.5px solid var(--border);
+/* ── Hero Category Panel (right side) ────────────────────────── */
+.hero-image { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; }
+
+.hero-cat-panel {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.hero-card-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, var(--light), #ede7f6); }
-.store-visual { text-align: center; }
-.clothes-rack { display: flex; gap: 16px; justify-content: center; margin-bottom: 20px; }
-.hanger {
-  width: 64px; height: 80px;
-  background: var(--c, #eee);
+.hero-cat-label {
+  font-size: .75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--text-light);
+}
+.hero-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.hero-cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px 12px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: center;
+  text-decoration: none;
+}
+.hero-cat-card:hover {
+  border-color: var(--purple);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.hcc-icon {
+  width: 52px; height: 52px;
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 2rem;
-  animation: sway 3s ease-in-out infinite;
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  font-size: 1.7rem;
+  flex-shrink: 0;
 }
-.hanger:nth-child(2) { animation-delay: .3s; }
-.hanger:nth-child(3) { animation-delay: .6s; }
-.hanger:nth-child(4) { animation-delay: .9s; }
-.hanger:nth-child(5) { animation-delay: 1.2s; }
+.hcc-name {
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.hcc-arrow {
+  font-size: .7rem;
+  color: var(--purple);
+  font-weight: 900;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.hero-cat-card:hover .hcc-arrow { opacity: 1; }
+
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
 @keyframes sway {
   0%, 100% { transform: rotate(-3deg); }
   50%       { transform: rotate(3deg); }
-}
-.store-visual-tag {
-  display: inline-block;
-  background: var(--purple);
-  color: #fff;
-  font-weight: 800;
-  font-size: .82rem;
-  letter-spacing: .06em;
-  padding: 8px 20px;
-  border-radius: 50px;
 }
 
 
@@ -868,7 +899,8 @@ address { font-style: normal; }
 
 @media (max-width: 1100px) {
   .hero { padding: 60px 40px; gap: 32px; }
-  .hero-card-big { width: 340px; height: 400px; }
+  .hero-cat-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats-row { grid-template-columns: repeat(4, 1fr); }
   .about-grid { gap: 48px; }
   .products-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -1660,11 +1692,7 @@ address { font-style: normal; }
     text-align: center;
   }
   .hero-content { order: 1; }
-  .hero-image { order: 2; justify-content: center; }
-  .hero-card-big { width: 100%; max-width: 360px; height: 280px; }
-  .clothes-rack { gap: 8px; }
-  .hanger { width: 48px; height: 60px; font-size: 1.5rem; }
-  .hero-stats { gap: 8px; }
+  .hero-image { order: 2; justify-content: center; display: none; }
   .hero-badges { justify-content: center; }
   .hero-buttons { justify-content: center; }
   .hero-sub { margin: 0 auto 28px; }
@@ -1707,8 +1735,6 @@ address { font-style: normal; }
 @media (max-width: 560px) {
   .hero-title { font-size: 2rem; }
   .highlight-script { font-size: 1.8rem; }
-  .hero-card-big { height: 240px; }
-  .hero-stat strong { font-size: .95rem; }
 
   /* Products – single column on very small screens */
   .products-grid { grid-template-columns: 1fr; }
@@ -1780,9 +1806,18 @@ address { font-style: normal; }
 
 
 /* ============================================================
-   MOBILE NAVBAR HEIGHT ADJUSTMENT
+   MOBILE – Fixed header so it always stays visible when scrolling
    ============================================================ */
 @media (max-width: 768px) {
+  .header-top { display: none; }          /* hide info bar on mobile to save space */
+  #header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 12px rgba(0,0,0,.10);
+  }
   .navbar { padding: 0 16px; height: 64px; }
-  .header-top { padding: 6px 16px; font-size: .75rem; }
+  /* Push page content below the fixed header */
+  body { padding-top: 64px; }
+  /* Phone number shown in mobile menu footer already */
 }
