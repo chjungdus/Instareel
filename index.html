@@ -17,6 +17,7 @@
   <header id="header">
     <div class="header-top">
       <span>📦 Kostenlose Beratung im Geschäft · Samstags 10:00–15:00 · Van Weedtstraat 4, Swolgen</span>
+      <a href="tel:+31478785459" class="header-top-tel">📱 +31 (0)478 - 785 459</a>
     </div>
     <nav class="navbar" id="navbar">
       <a href="#home" class="logo-link">
@@ -51,8 +52,13 @@
         <li><a href="#shop" class="nav-link">Neu eingetroffen</a></li>
         <li><a href="#ueber-uns" class="nav-link">Über uns</a></li>
         <li><a href="#bewertungen" class="nav-link">Bewertungen</a></li>
-        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="kontakt.html" class="nav-link">Kontakt & Standort</a></li>
       </ul>
+
+      <!-- Desktop Search -->
+      <div class="nav-search-wrap">
+        <input type="search" id="navSearch" class="nav-search-input" placeholder="🔍 Produkte suchen…" autocomplete="off" />
+      </div>
 
       <div class="navbar-right">
         <button class="cart-btn" id="cartBtn" aria-label="Warenkorb öffnen">
@@ -77,6 +83,11 @@
         <div class="logo-text"><span class="logo-main">Estrellas</span><span class="logo-sub">de colores</span></div>
       </div>
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menü schließen">✕</button>
+    </div>
+
+    <!-- Mobile Search -->
+    <div class="mobile-search-wrap">
+      <input type="search" id="mobileSearch" class="mobile-search-input" placeholder="🔍 Produkte suchen…" autocomplete="off" />
     </div>
 
     <div class="mobile-menu-body">
@@ -111,7 +122,7 @@
       <div class="mobile-section-title">Info</div>
       <a href="#ueber-uns"  class="mobile-nav-item" data-close>💜 Über uns</a>
       <a href="#bewertungen" class="mobile-nav-item" data-close>⭐ Bewertungen</a>
-      <a href="#kontakt"    class="mobile-nav-item" data-close>📞 Kontakt</a>
+      <a href="kontakt.html" class="mobile-nav-item" data-close>📞 Kontakt & Standort</a>
     </div>
 
     <div class="mobile-menu-footer">
@@ -147,7 +158,7 @@
       </p>
       <div class="hero-buttons">
         <a href="#shop" class="btn btn-primary">Jetzt entdecken →</a>
-        <a href="#kontakt" class="btn btn-outline">Schreib uns</a>
+        <a href="kontakt.html" class="btn btn-outline">Schreib uns</a>
       </div>
       <div class="hero-badges">
         <div class="badge"><span>👶</span> 0–14 Jahre</div>
@@ -871,68 +882,7 @@
               <div><strong>Qualität zuerst</strong><p>Weiche Stoffe, faire Preise</p></div>
             </div>
           </div>
-          <a href="#kontakt" class="btn btn-primary">Besuch uns!</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       ÖFFNUNGSZEITEN & LADENINFO
-  ============================================================ -->
-  <section class="section section-purple" id="ladeninfo">
-    <div class="container">
-      <div class="info-grid">
-        <div class="info-card">
-          <span class="info-icon">🕙</span>
-          <h3>Öffnungszeiten</h3>
-          <table class="hours-table">
-            <tr><td>Montag</td><td>Geschlossen</td></tr>
-            <tr><td>Dienstag</td><td>Geschlossen</td></tr>
-            <tr><td>Mittwoch</td><td>Geschlossen</td></tr>
-            <tr><td>Donnerstag</td><td>Geschlossen</td></tr>
-            <tr><td>Freitag</td><td>Geschlossen</td></tr>
-            <tr class="open-day"><td><strong>Samstag</strong></td><td><strong>10:00 – 15:00</strong></td></tr>
-            <tr><td>Sonntag</td><td>Geschlossen</td></tr>
-          </table>
-          <p class="info-note">🎄 Besondere Öffnungszeiten an Feiertagen – folge uns auf Facebook!</p>
-        </div>
-        <div class="info-card">
-          <span class="info-icon">📍</span>
-          <h3>Adresse & Parken</h3>
-          <p class="info-address">
-            Van Weedtstraat 4<br/>
-            5866 BL Swolgen<br/>
-            Niederlande
-          </p>
-          <div class="parking-info">
-            <p>🅿️ <strong>Kostenloses Parken:</strong></p>
-            <ul>
-              <li>Beim Kirchplatz</li>
-              <li>DJ Timmie Tirol Platz</li>
-            </ul>
-          </div>
-          <a href="https://maps.google.com/?q=Van+Weedtstraat+4,+5866+BL+Swolgen" target="_blank" rel="noopener" class="btn btn-white">
-            📌 Route planen
-          </a>
-        </div>
-        <div class="info-card">
-          <span class="info-icon">📞</span>
-          <h3>Kontakt</h3>
-          <div class="contact-details">
-            <a href="tel:+31478785459" class="contact-item">
-              <span>📱</span><span>+31 (0)478 - 785 459</span>
-            </a>
-            <a href="mailto:estrellas-de-colores@outlook.com" class="contact-item">
-              <span>✉️</span><span>estrellas-de-colores@outlook.com</span>
-            </a>
-            <a href="https://www.estrellas-de-colores.nl" target="_blank" class="contact-item">
-              <span>🌐</span><span>www.estrellas-de-colores.nl</span>
-            </a>
-            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="contact-item">
-              <span>👍</span><span>Facebook-Seite</span>
-            </a>
-          </div>
+          <a href="kontakt.html" class="btn btn-primary">Besuch uns!</a>
         </div>
       </div>
     </div>
@@ -1020,68 +970,6 @@
   </section>
 
   <!-- ============================================================
-       KONTAKT
-  ============================================================ -->
-  <section class="section section-light" id="kontakt">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info-side">
-          <span class="section-tag">Kontakt aufnehmen</span>
-          <h2>Wir freuen uns von dir zu hören!</h2>
-          <p>Hast du eine Frage zur Kollektion, Verfügbarkeit oder möchtest etwas reservieren?
-             Schreib uns eine Nachricht und wir antworten so schnell wie möglich.</p>
-          <div class="contact-quick">
-            <a href="tel:+31478785459" class="quick-btn"><span>📱</span> Anrufen</a>
-            <a href="mailto:estrellas-de-colores@outlook.com" class="quick-btn"><span>✉️</span> E-Mail</a>
-            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="quick-btn"><span>👍</span> Facebook</a>
-          </div>
-          <div class="contact-opening">
-            <h4>🕙 Laden besuchen?</h4>
-            <p><strong>Samstag</strong> von 10:00 bis 15:00 Uhr</p>
-            <p>Van Weedtstraat 4, 5866 BL Swolgen</p>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contactName">Name *</label>
-              <input type="text" id="contactName" placeholder="Dein vollständiger Name" required />
-            </div>
-            <div class="form-group">
-              <label for="contactEmail">E-Mail *</label>
-              <input type="email" id="contactEmail" placeholder="deine@email.de" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="contactPhone">Telefonnummer</label>
-            <input type="tel" id="contactPhone" placeholder="+49 ..." />
-          </div>
-          <div class="form-group">
-            <label for="contactSubject">Betreff</label>
-            <select id="contactSubject">
-              <option value="">Betreff auswählen</option>
-              <option>Frage zur Kollektion</option>
-              <option>Artikelverfügbarkeit</option>
-              <option>Gutschein</option>
-              <option>Reservierung</option>
-              <option>Kooperation</option>
-              <option>Sonstiges</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="contactMsg">Deine Nachricht *</label>
-            <textarea id="contactMsg" rows="5" placeholder="Schreib hier deine Nachricht..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Nachricht senden ✨</button>
-        </form>
-        <div id="contactSuccess" class="success-msg" style="display:none">
-          ✅ Deine Nachricht wurde gesendet! Carolina meldet sich so schnell wie möglich.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        NEWSLETTER
   ============================================================ -->
   <section class="section-newsletter">
@@ -1127,12 +1015,12 @@
           <div class="footer-col">
             <h4>Navigation</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="#shop">Kollektion</a></li>
               <li><a href="#shop">Neu eingetroffen</a></li>
               <li><a href="#ueber-uns">Über uns</a></li>
               <li><a href="#bewertungen">Bewertungen</a></li>
-              <li><a href="#kontakt">Kontakt</a></li>
+              <li><a href="kontakt.html">Kontakt & Standort</a></li>
             </ul>
           </div>
           <div class="footer-col">

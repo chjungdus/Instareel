@@ -4,19 +4,25 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Navbar scroll shadow ─────────────────────────────── */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 10);
-  }, { passive: true });
+  /* ── Navbar scroll shadow (handled via #header.scrolled) ─ */
 
 
   /* ── Back to top ──────────────────────────────────────── */
   const backBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backBtn.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
-  backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (backBtn) {
+    window.addEventListener('scroll', () => {
+      backBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  /* ── Sticky header scroll shadow ──────────────────────── */
+  const headerEl = document.getElementById('header');
+  if (headerEl) {
+    window.addEventListener('scroll', () => {
+      headerEl.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
 
 
   /* ── Smooth scroll ────────────────────────────────────── */
@@ -121,7 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
 
     // Update shop title
-    shopTitle.textContent = categoryNames[filter] || 'Alle Produkte';
+    if (shopTitle) shopTitle.textContent = categoryNames[filter] || 'Alle Produkte';
+
+    // Clear search input when filtering
+    const navSearch   = document.getElementById('navSearch');
+    const mobileSearch = document.getElementById('mobileSearch');
+    if (navSearch)    navSearch.value    = '';
+    if (mobileSearch) mobileSearch.value = '';
 
     // Show/hide product cards
     let visibleCount = 0;
@@ -139,8 +151,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    noProducts.style.display = visibleCount === 0 ? 'block' : 'none';
+    if (noProducts) noProducts.style.display = visibleCount === 0 ? 'block' : 'none';
   }
+
+  /* ── Product Search ───────────────────────────────────── */
+  function searchProducts(query) {
+    const q = query.trim().toLowerCase();
+    // Reset filter buttons to "alle" state visually
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === 'alle'));
+    if (shopTitle) shopTitle.textContent = q ? `🔍 Suche: "${query}"` : 'Alle Produkte';
+
+    let visibleCount = 0;
+    productCards.forEach(card => {
+      const name = (card.dataset.name || '').toLowerCase();
+      const desc = (card.querySelector('.product-desc')?.textContent || '').toLowerCase();
+      const cat  = (card.dataset.category || '').toLowerCase();
+      const match = !q || name.includes(q) || desc.includes(q) || cat.includes(q);
+      if (match) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    if (noProducts) noProducts.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  const navSearch    = document.getElementById('navSearch');
+  const mobileSearch = document.getElementById('mobileSearch');
+  [navSearch, mobileSearch].forEach(el => {
+    if (!el) return;
+    el.addEventListener('input', () => {
+      const q = el.value;
+      // Sync both search inputs
+      if (navSearch    && el !== navSearch)    navSearch.value    = q;
+      if (mobileSearch && el !== mobileSearch) mobileSearch.value = q;
+      if (q) {
+        searchProducts(q);
+        setTimeout(() => scrollToEl('#shop'), 50);
+      } else {
+        applyFilter('alle');
+      }
+    });
+  });
 
   // Filter bar button clicks
   filterBtns.forEach(btn => {
@@ -453,7 +506,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('confirmDone').addEventListener('click', () => {
     closeCheckout();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.location.pathname.includes('kontakt')) {
+      window.location.href = 'index.html';
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 
 

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt & Standort – Estrellas de Colores</title>
+  <meta name="description" content="Kontaktiere Estrellas de Colores in Swolgen. Öffnungszeiten, Adresse, Telefon und Kontaktformular." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER & NAVIGATION
+  ============================================================ -->
+  <header id="header">
+    <div class="header-top">
+      <span>📦 Kostenlose Beratung im Geschäft · Samstags 10:00–15:00 · Van Weedtstraat 4, Swolgen</span>
+      <a href="tel:+31478785459" class="header-top-tel">📱 +31 (0)478 - 785 459</a>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <div class="logo-stars">
+            <span class="star s1">★</span>
+            <span class="star s2">★</span>
+            <span class="star s3">★</span>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">Estrellas</span>
+            <span class="logo-sub">de colores</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown">
+          <a href="index.html#shop" class="nav-link">Kollektion <span class="arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#shop">👗 Mädchen</a></li>
+            <li><a href="index.html#shop">👗 Kleider</a></li>
+            <li><a href="index.html#shop">👕 Jungen</a></li>
+            <li><a href="index.html#shop">🍼 Baby (0–2 J.)</a></li>
+            <li><a href="index.html#shop">🧒 Kleinkind (2–4 J.)</a></li>
+            <li><a href="index.html#shop">🩳 Jogginghosen</a></li>
+            <li><a href="index.html#shop">🎀 Accessoires</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#shop" class="nav-link">Neu eingetroffen</a></li>
+        <li><a href="index.html#ueber-uns" class="nav-link">Über uns</a></li>
+        <li><a href="index.html#bewertungen" class="nav-link">Bewertungen</a></li>
+        <li><a href="kontakt.html" class="nav-link active">Kontakt & Standort</a></li>
+      </ul>
+
+      <div class="navbar-right">
+        <button class="cart-btn" id="cartBtn" aria-label="Warenkorb öffnen">
+          🛒
+          <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU (Hamburger)
+  ============================================================ -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobiles Menü">
+    <div class="mobile-menu-header">
+      <div class="logo">
+        <div class="logo-stars"><span class="star s1">★</span><span class="star s2">★</span><span class="star s3">★</span></div>
+        <div class="logo-text"><span class="logo-main">Estrellas</span><span class="logo-sub">de colores</span></div>
+      </div>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menü schließen">✕</button>
+    </div>
+
+    <div class="mobile-menu-body">
+      <a href="index.html" class="mobile-nav-item" data-close>🏠 Home</a>
+
+      <div class="mobile-section-title">Kollektion</div>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#f3e5f5">✨</span> Alle Produkte
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#fce4ec">👗</span> Mädchen
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#fce4ec">👒</span> Kleider
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#e3f2fd">👕</span> Jungen
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#fff9c4">🍼</span> Baby (0–2 J.)
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#e8f5e9">🧒</span> Kleinkind (2–4 J.)
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#e8eaf6">🩳</span> Jogginghosen
+      </a>
+      <a href="index.html#shop" class="mobile-nav-item" data-close>
+        <span class="mobile-cat-icon" style="background:#fce4ec">🎀</span> Accessoires
+      </a>
+
+      <div class="mobile-section-title">Info</div>
+      <a href="index.html#ueber-uns" class="mobile-nav-item" data-close>💜 Über uns</a>
+      <a href="index.html#bewertungen" class="mobile-nav-item" data-close>⭐ Bewertungen</a>
+      <a href="kontakt.html" class="mobile-nav-item active" data-close>📞 Kontakt & Standort</a>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <a href="tel:+31478785459" class="mobile-contact-btn">📱 +31 (0)478 - 785 459</a>
+      <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="mobile-contact-btn facebook">👍 Facebook</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HERO (Kontakt)
+  ============================================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag">Wir sind für dich da</span>
+      <h1>Kontakt & Standort</h1>
+      <p>Fragen zur Kollektion, Öffnungszeiten oder möchtest du vorbeikommen? Hier findest du alle Infos.</p>
+      <div class="page-hero-actions">
+        <a href="tel:+31478785459" class="btn btn-primary">📱 Jetzt anrufen</a>
+        <a href="#kontakt-formular" class="btn btn-outline">✉️ Nachricht senden</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ÖFFNUNGSZEITEN & LADENINFO
+  ============================================================ -->
+  <section class="section section-purple" id="ladeninfo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" style="background:rgba(255,255,255,.15);color:#fff">Ladeninfo</span>
+        <h2 style="color:#fff">Komm uns besuchen!</h2>
+        <p style="color:rgba(255,255,255,.8)">Alle wichtigen Informationen auf einen Blick</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-icon">🕙</span>
+          <h3>Öffnungszeiten</h3>
+          <table class="hours-table">
+            <tr><td>Montag</td><td>Geschlossen</td></tr>
+            <tr><td>Dienstag</td><td>Geschlossen</td></tr>
+            <tr><td>Mittwoch</td><td>Geschlossen</td></tr>
+            <tr><td>Donnerstag</td><td>Geschlossen</td></tr>
+            <tr><td>Freitag</td><td>Geschlossen</td></tr>
+            <tr class="open-day"><td><strong>Samstag</strong></td><td><strong>10:00 – 15:00</strong></td></tr>
+            <tr><td>Sonntag</td><td>Geschlossen</td></tr>
+          </table>
+          <p class="info-note">🎄 Besondere Öffnungszeiten an Feiertagen – folge uns auf Facebook!</p>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">📍</span>
+          <h3>Adresse & Parken</h3>
+          <p class="info-address">
+            Van Weedtstraat 4<br/>
+            5866 BL Swolgen<br/>
+            Niederlande
+          </p>
+          <div class="parking-info">
+            <p>🅿️ <strong>Kostenloses Parken:</strong></p>
+            <ul>
+              <li>Beim Kirchplatz</li>
+              <li>DJ Timmie Tirol Platz</li>
+            </ul>
+          </div>
+          <a href="https://maps.google.com/?q=Van+Weedtstraat+4,+5866+BL+Swolgen" target="_blank" rel="noopener" class="btn btn-white">
+            📌 Route planen
+          </a>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">📞</span>
+          <h3>Kontakt</h3>
+          <div class="contact-details">
+            <a href="tel:+31478785459" class="contact-item">
+              <span>📱</span><span>+31 (0)478 - 785 459</span>
+            </a>
+            <a href="mailto:estrellas-de-colores@outlook.com" class="contact-item">
+              <span>✉️</span><span>estrellas-de-colores@outlook.com</span>
+            </a>
+            <a href="https://www.estrellas-de-colores.nl" target="_blank" class="contact-item">
+              <span>🌐</span><span>www.estrellas-de-colores.nl</span>
+            </a>
+            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="contact-item">
+              <span>👍</span><span>Facebook-Seite</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTAKT FORMULAR
+  ============================================================ -->
+  <section class="section section-light" id="kontakt-formular">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-side">
+          <span class="section-tag">Kontakt aufnehmen</span>
+          <h2>Wir freuen uns von dir zu hören!</h2>
+          <p>Hast du eine Frage zur Kollektion, Verfügbarkeit oder möchtest etwas reservieren?
+             Schreib uns eine Nachricht und wir antworten so schnell wie möglich.</p>
+          <div class="contact-quick">
+            <a href="tel:+31478785459" class="quick-btn"><span>📱</span> Anrufen</a>
+            <a href="mailto:estrellas-de-colores@outlook.com" class="quick-btn"><span>✉️</span> E-Mail</a>
+            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="quick-btn"><span>👍</span> Facebook</a>
+          </div>
+          <div class="contact-opening">
+            <h4>🕙 Laden besuchen?</h4>
+            <p><strong>Samstag</strong> von 10:00 bis 15:00 Uhr</p>
+            <p>Van Weedtstraat 4, 5866 BL Swolgen</p>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Name *</label>
+              <input type="text" id="contactName" placeholder="Dein vollständiger Name" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">E-Mail *</label>
+              <input type="email" id="contactEmail" placeholder="deine@email.de" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Telefonnummer</label>
+            <input type="tel" id="contactPhone" placeholder="+31 ..." />
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Betreff</label>
+            <select id="contactSubject">
+              <option value="">Betreff auswählen</option>
+              <option>Frage zur Kollektion</option>
+              <option>Artikelverfügbarkeit</option>
+              <option>Gutschein</option>
+              <option>Reservierung</option>
+              <option>Kooperation</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMsg">Deine Nachricht *</label>
+            <textarea id="contactMsg" rows="5" placeholder="Schreib hier deine Nachricht..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Nachricht senden ✨</button>
+        </form>
+        <div id="contactSuccess" class="success-msg" style="display:none">
+          ✅ Deine Nachricht wurde gesendet! Carolina meldet sich so schnell wie möglich.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWSLETTER
+  ============================================================ -->
+  <section class="section-newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-stars" aria-hidden="true">
+          <span>★</span><span>●</span><span>★</span><span>●</span><span>★</span>
+        </div>
+        <h2>Immer auf dem Laufenden!</h2>
+        <p>Erhalte News über neue Kollektionen, Angebote und besondere Öffnungszeiten</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Deine E-Mail-Adresse" required />
+          <button type="submit" class="btn btn-white">Anmelden</button>
+        </form>
+        <p class="newsletter-note">📱 Oder folge uns auf <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener">Facebook</a> für tägliche Updates!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="logo-stars small">
+                <span class="star s1">★</span><span class="star s2">★</span><span class="star s3">★</span>
+              </div>
+              <div class="logo-text">
+                <span class="logo-main">Estrellas</span>
+                <span class="logo-sub">de colores</span>
+              </div>
+            </div>
+            <p class="footer-tagline">Die Adresse für stilvolle Kindermode in Swolgen</p>
+            <p class="footer-tagline">Für Kinder von 0 bis 14 Jahren</p>
+            <a href="https://www.facebook.com/estrellasdecolores.2024" target="_blank" rel="noopener" class="social-btn facebook">
+              👍 Auf Facebook folgen
+            </a>
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#shop">Kollektion</a></li>
+              <li><a href="index.html#shop">Neu eingetroffen</a></li>
+              <li><a href="index.html#ueber-uns">Über uns</a></li>
+              <li><a href="index.html#bewertungen">Bewertungen</a></li>
+              <li><a href="kontakt.html">Kontakt & Standort</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Kategorien</h4>
+            <ul>
+              <li><a href="index.html#shop">Mädchen</a></li>
+              <li><a href="index.html#shop">Jungen</a></li>
+              <li><a href="index.html#shop">Baby (0–2 J.)</a></li>
+              <li><a href="index.html#shop">Kleinkind (2–4 J.)</a></li>
+              <li><a href="index.html#shop">Jogginghosen</a></li>
+              <li><a href="index.html#shop">Accessoires</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ladeninfo</h4>
+            <address>
+              <p>📍 Van Weedtstraat 4<br/>5866 BL Swolgen, NL</p>
+              <p>📱 <a href="tel:+31478785459">+31 (0)478 - 785 459</a></p>
+              <p>✉️ <a href="mailto:estrellas-de-colores@outlook.com">estrellas-de-colores@outlook.com</a></p>
+              <p>🕙 Sa: 10:00 – 15:00 Uhr</p>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Estrellas de Colores · Carolina Rubio · Van Weedtstraat 4, Swolgen</p>
+        <div class="footer-stars" aria-hidden="true">
+          <span style="color:#E91E8C">★</span>
+          <span style="color:#F5A623">★</span>
+          <span style="color:#2196F3">●</span>
+          <span style="color:#4CAF50">★</span>
+          <span style="color:#9C27B0">★</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nach oben">↑</button>
+
+  <!-- ============================================================
+       WARENKORB DRAWER
+  ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
+    <div class="cart-drawer-header">
+      <h3>🛒 Warenkorb</h3>
+      <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Zwischensumme</span>
+        <span id="cartSubtotal">€0,00</span>
+      </div>
+      <p class="cart-shipping-note">🚚 Versandkosten werden beim Checkout berechnet</p>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Zur Kasse →</button>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       CHECKOUT MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="checkoutOverlay"></div>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Zur Kasse">
+    <button class="modal-close" id="checkoutClose" aria-label="Schließen">✕</button>
+
+    <!-- Schritt 1: Daten -->
+    <div class="checkout-step" id="step1">
+      <div class="checkout-header">
+        <div class="step-indicator">
+          <span class="step active">1</span>
+          <span class="step-line"></span>
+          <span class="step">2</span>
+          <span class="step-line"></span>
+          <span class="step">3</span>
+        </div>
+        <h2>Deine Daten</h2>
+      </div>
+      <form id="checkoutForm1">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="chkFirstName">Vorname *</label>
+            <input type="text" id="chkFirstName" placeholder="Anna" required />
+          </div>
+          <div class="form-group">
+            <label for="chkLastName">Nachname *</label>
+            <input type="text" id="chkLastName" placeholder="Müller" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="chkEmail">E-Mail-Adresse *</label>
+          <input type="email" id="chkEmail" placeholder="anna@email.de" required />
+        </div>
+        <div class="form-group">
+          <label for="chkPhone">Telefonnummer</label>
+          <input type="tel" id="chkPhone" placeholder="+31 ..." />
+        </div>
+        <div class="form-row">
+          <div class="form-group" style="flex:2">
+            <label for="chkStreet">Straße *</label>
+            <input type="text" id="chkStreet" placeholder="Hauptstraße" required />
+          </div>
+          <div class="form-group" style="flex:1">
+            <label for="chkHouseNr">Nr. *</label>
+            <input type="text" id="chkHouseNr" placeholder="12" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="chkPostcode">PLZ *</label>
+            <input type="text" id="chkPostcode" placeholder="12345" required />
+          </div>
+          <div class="form-group">
+            <label for="chkCity">Ort *</label>
+            <input type="text" id="chkCity" placeholder="Berlin" required />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Weiter zur Zahlung →</button>
+      </form>
+    </div>
+
+    <!-- Schritt 2: Zahlung -->
+    <div class="checkout-step" id="step2" style="display:none">
+      <div class="checkout-header">
+        <div class="step-indicator">
+          <span class="step done">✓</span>
+          <span class="step-line active"></span>
+          <span class="step active">2</span>
+          <span class="step-line"></span>
+          <span class="step">3</span>
+        </div>
+        <h2>Zahlungsart wählen</h2>
+      </div>
+      <div class="order-summary" id="orderSummary"></div>
+      <div class="payment-methods">
+        <p class="payment-label">Zahlungsart auswählen:</p>
+        <div class="payment-grid">
+          <label class="payment-option">
+            <input type="radio" name="payment" value="ideal" checked />
+            <span class="payment-card">
+              <span class="payment-icon">🏦</span>
+              <span class="payment-name">iDEAL</span>
+            </span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="creditcard" />
+            <span class="payment-card">
+              <span class="payment-icon">💳</span>
+              <span class="payment-name">Kreditkarte</span>
+            </span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="paypal" />
+            <span class="payment-card">
+              <span class="payment-icon">🅿️</span>
+              <span class="payment-name">PayPal</span>
+            </span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="klarna" />
+            <span class="payment-card">
+              <span class="payment-icon">🟣</span>
+              <span class="payment-name">Klarna</span>
+            </span>
+          </label>
+        </div>
+        <div class="ideal-banks" id="idealBanks">
+          <label for="bankSelect">Deine Bank auswählen:</label>
+          <select id="bankSelect">
+            <option value="">-- Bank auswählen --</option>
+            <option value="ABNANL2A">ABN AMRO</option>
+            <option value="ASNBNL21">ASN Bank</option>
+            <option value="BUNQNL2A">bunq</option>
+            <option value="INGBNL2A">ING</option>
+            <option value="KNABNL2H">Knab</option>
+            <option value="RABONL2U">Rabobank</option>
+            <option value="RBRBNL21">RegioBank</option>
+            <option value="SNSBNL2A">SNS Bank</option>
+            <option value="TRIONL2U">Triodos Bank</option>
+          </select>
+        </div>
+      </div>
+      <div class="checkout-total-bar">
+        <span>Gesamt zu zahlen</span>
+        <strong id="checkoutTotal">€0,00</strong>
+      </div>
+      <div class="mollie-notice">
+        <p>
+          Zahlungen werden sicher über <strong>Mollie</strong> abgewickelt –
+          der meistgenutzte Zahlungsanbieter der Niederlande.<br/>
+          <span>🔒 SSL-verschlüsselt · PCI DSS konform</span>
+        </p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-outline" id="backToStep1">← Zurück</button>
+        <button class="btn btn-primary" id="payNowBtn" style="flex:1">Jetzt bezahlen 🔒</button>
+      </div>
+    </div>
+
+    <!-- Schritt 3: Bestätigung -->
+    <div class="checkout-step" id="step3" style="display:none">
+      <div class="confirmation-icon">✅</div>
+      <h2>Bestellung aufgegeben!</h2>
+      <p class="confirm-text">
+        Vielen Dank für deine Bestellung bei <strong>Estrellas de Colores</strong>!<br/>
+        Du erhältst eine Bestätigung per E-Mail. Wir bearbeiten deine Bestellung so schnell wie möglich.
+      </p>
+      <div class="confirm-details" id="confirmDetails"></div>
+      <p class="confirm-sub">
+        Fragen? Ruf an: <a href="tel:+31478785459">+31 (0)478 - 785 459</a>
+        oder schreib an <a href="mailto:estrellas-de-colores@outlook.com">estrellas-de-colores@outlook.com</a>
+      </p>
+      <button class="btn btn-primary btn-full" id="confirmDone">Zurück zum Shop</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

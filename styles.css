@@ -56,6 +56,14 @@ address { font-style: normal; }
 }
 
 
+/* ── Sticky Header ──────────────────────────────────────────── */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: var(--white);
+}
+
 /* ── Header Top Bar ──────────────────────────────────────────── */
 .header-top {
   background: var(--purple);
@@ -63,9 +71,20 @@ address { font-style: normal; }
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: .04em;
-  text-align: center;
-  padding: 8px 16px;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px;
 }
+.header-top-tel {
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.header-top-tel:hover { color: var(--yellow); }
 
 
 /* ── Navbar ──────────────────────────────────────────── */
@@ -75,14 +94,39 @@ address { font-style: normal; }
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  height: 80px;
+  height: 72px;
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
   transition: box-shadow var(--transition);
 }
-.navbar.scrolled { box-shadow: var(--shadow-md); }
+#header.scrolled .navbar { box-shadow: var(--shadow-md); }
+
+/* ── Navbar Search ──────────────────────────────────────────── */
+.nav-search-wrap {
+  flex: 0 1 260px;
+  margin: 0 16px;
+}
+.nav-search-input {
+  width: 100%;
+  padding: 9px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-size: .85rem;
+  background: var(--light);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.nav-search-input:focus {
+  border-color: var(--purple);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(91,45,142,.1);
+}
+.nav-search-input::placeholder { color: var(--text-light); }
+
+/* Hide desktop search on mobile */
+@media (max-width: 900px) { .nav-search-wrap { display: none; } }
 
 /* Logo */
 .logo-link { display: flex; align-items: center; }
@@ -197,11 +241,11 @@ address { font-style: normal; }
 
 
 /* ── Section Shared ──────────────────────────────────────────── */
-.section { padding: 96px 0; }
+.section { padding: 72px 0; }
 .section-light { background: var(--light); }
 .section-purple { background: var(--purple); color: #fff; }
 
-.section-header { text-align: center; margin-bottom: 56px; }
+.section-header { text-align: center; margin-bottom: 40px; }
 .section-tag {
   display: inline-block;
   background: var(--light);
@@ -230,13 +274,13 @@ address { font-style: normal; }
 
 /* ── HERO ──────────────────────────────────────────── */
 .hero {
-  min-height: calc(100vh - 120px);
+  min-height: 560px;
   background: var(--off-white);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 48px;
-  padding: 80px 80px 80px 80px;
+  padding: 64px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -493,14 +537,14 @@ address { font-style: normal; }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 72px;
+  gap: 48px;
   align-items: center;
 }
 .about-visual { position: relative; }
 .about-card-main {
   background: linear-gradient(145deg, var(--light), #ede7f6);
   border-radius: 28px;
-  height: 440px;
+  height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -657,7 +701,7 @@ address { font-style: normal; }
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 72px;
+  gap: 48px;
   align-items: start;
 }
 .contact-info-side { }
@@ -844,7 +888,7 @@ address { font-style: normal; }
   .info-grid { grid-template-columns: 1fr; padding: 48px 0; }
   .reviews-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .navbar { padding: 0 20px; }
+  .navbar { padding: 0 20px; height: 72px; }
 }
 
 @media (max-width: 768px) {
@@ -852,7 +896,7 @@ address { font-style: normal; }
   .nav-links {
     display: none;
     position: fixed;
-    top: 120px; left: 0; right: 0;
+    top: 116px; left: 0; right: 0;
     background: var(--white);
     flex-direction: column;
     align-items: flex-start;
@@ -1459,7 +1503,7 @@ address { font-style: normal; }
   background: var(--white);
   border-bottom: 2px solid var(--border);
   position: sticky;
-  top: 80px;
+  top: 108px;
   z-index: 90;
   overflow: hidden;
 }
@@ -1604,7 +1648,7 @@ address { font-style: normal; }
   }
   .hc-large { grid-row: span 1; }
   .hero { padding: 60px 32px; gap: 32px; }
-  .cat-strip { top: 72px; }
+  .cat-strip { top: 72px; } /* navbar height only, header-top scrolls */
 }
 
 @media (max-width: 768px) {
@@ -1676,4 +1720,69 @@ address { font-style: normal; }
 
   .section { padding: 56px 0; }
   .section-header { margin-bottom: 32px; }
+
+  /* Hide phone in header-top on very small screens to save space */
+  .header-top-tel { display: none; }
+}
+
+
+/* ============================================================
+   MOBILE SEARCH (inside mobile menu)
+   ============================================================ */
+.mobile-search-wrap {
+  padding: 12px 16px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-size: .9rem;
+  background: var(--light);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.mobile-search-input:focus {
+  border-color: var(--purple);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(91,45,142,.1);
+}
+.mobile-search-input::placeholder { color: var(--text-light); }
+
+
+/* ============================================================
+   PAGE HERO (kontakt.html & other sub-pages)
+   ============================================================ */
+.page-hero {
+  background: linear-gradient(135deg, var(--light) 0%, #ede7f6 100%);
+  padding: 64px 0 56px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero .section-tag { margin-bottom: 16px; }
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: var(--purple);
+  letter-spacing: -.02em;
+  margin-bottom: 14px;
+}
+.page-hero p {
+  color: var(--text-mid);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto 28px;
+}
+.page-hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+
+/* ============================================================
+   MOBILE NAVBAR HEIGHT ADJUSTMENT
+   ============================================================ */
+@media (max-width: 768px) {
+  .navbar { padding: 0 16px; height: 64px; }
+  .header-top { padding: 6px 16px; font-size: .75rem; }
 }
