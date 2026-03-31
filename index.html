@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estrellas de Colores – Stilvolle Kindermode in Swolgen</title>
-  <meta name="description" content="Estrellas de Colores – Die Adresse für stilvolle Kindermode in Swolgen. Für Kinder von 0 bis 14 Jahren. Samstags geöffnet von 10:00 bis 15:00 Uhr." />
+  <title>Estrellas de Colores – Kindermode Swolgen</title>
+  <meta name="description" content="Estrellas de Colores – Stijlvolle kindermode in Swolgen. Voor kinderen van 0 tot 14 jaar. Zaterdag geopend van 10:00 tot 15:00." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
@@ -16,56 +16,69 @@
   ============================================================ -->
   <header id="header">
     <div class="header-top">
-      <span>📦 Kostenlose Beratung im Geschäft · Samstags 10:00–15:00 · Van Weedtstraat 4, Swolgen</span>
+      <span data-i18n="header.info">📦 Gratis advies in de winkel · Zaterdag 10:00–15:00 · Van Weedtstraat 4, Swolgen</span>
       <a href="tel:+31478785459" class="header-top-tel">📱 +31 (0)478 - 785 459</a>
     </div>
     <nav class="navbar" id="navbar">
+      <!-- ── LOGO (1:1 gebaseerd op visitekaartje) ── -->
       <a href="#home" class="logo-link">
         <div class="logo">
-          <div class="logo-stars">
-            <span class="star s1">★</span>
-            <span class="star s2">★</span>
-            <span class="star s3">★</span>
-          </div>
-          <div class="logo-text">
-            <span class="logo-main">Estrellas</span>
-            <span class="logo-sub">de colores</span>
+          <div class="logo-brand">
+            <div class="logo-row1">
+              <span class="lstark" style="color:#E91E8C">★</span>
+              <span class="logo-main">Estrellas</span>
+              <span class="lstark" style="color:#4CAF50;font-size:.55em;vertical-align:super">★</span>
+            </div>
+            <div class="logo-row2">
+              <span class="lstark" style="color:#2196F3;font-size:.5em">★</span>
+              <span class="logo-sub">de colores</span>
+              <span class="lstark ldot" style="color:#FF9800">●</span>
+            </div>
+            <span class="logo-kindermode">KINDERMODE</span>
           </div>
         </div>
       </a>
 
       <!-- Desktop nav links -->
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
         <li class="dropdown">
-          <a href="#shop" class="nav-link">Kollektion <span class="arrow">▾</span></a>
+          <a href="#shop" class="nav-link"><span data-i18n="nav.collection">Collectie</span> <span class="arrow">▾</span></a>
           <ul class="dropdown-menu">
-            <li><a href="#shop" data-filter="maedchen">👗 Mädchen</a></li>
-            <li><a href="#shop" data-filter="kleider">👗 Kleider</a></li>
-            <li><a href="#shop" data-filter="jungen">👕 Jungen</a></li>
-            <li><a href="#shop" data-filter="baby">🍼 Baby (0–2 J.)</a></li>
-            <li><a href="#shop" data-filter="kleinkind">🧒 Kleinkind (2–4 J.)</a></li>
-            <li><a href="#shop" data-filter="jogginghosen">🩳 Jogginghosen</a></li>
-            <li><a href="#shop" data-filter="accessoires">🎀 Accessoires</a></li>
+            <li><a href="#shop" data-filter="maedchen" data-i18n-html="cat.maedchen.full">👗 Meisjes</a></li>
+            <li><a href="#shop" data-filter="kleider"  data-i18n-html="cat.kleider.full">👗 Jurken</a></li>
+            <li><a href="#shop" data-filter="jungen"   data-i18n-html="cat.jungen.full">👕 Jongens</a></li>
+            <li><a href="#shop" data-filter="baby"     data-i18n-html="cat.baby.full">🍼 Baby (0–2 j.)</a></li>
+            <li><a href="#shop" data-filter="kleinkind" data-i18n-html="cat.kleinkind.full">🧒 Kleuter (2–4 j.)</a></li>
+            <li><a href="#shop" data-filter="jogginghosen" data-i18n-html="cat.jogginghosen.full">🩳 Joggingbroeken</a></li>
+            <li><a href="#shop" data-filter="accessoires"  data-i18n-html="cat.accessoires.full">🎀 Accessoires</a></li>
           </ul>
         </li>
-        <li><a href="#shop" class="nav-link">Neu eingetroffen</a></li>
-        <li><a href="#ueber-uns" class="nav-link">Über uns</a></li>
-        <li><a href="#bewertungen" class="nav-link">Bewertungen</a></li>
-        <li><a href="kontakt.html" class="nav-link">Kontakt & Standort</a></li>
+        <li><a href="#shop"       class="nav-link" data-i18n="nav.new">Nieuw binnen</a></li>
+        <li><a href="#ueber-uns"  class="nav-link" data-i18n="nav.about">Over ons</a></li>
+        <li><a href="#bewertungen" class="nav-link" data-i18n="nav.reviews">Beoordelingen</a></li>
+        <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="nl" title="Nederlands">🇳🇱</button>
+        <button class="lang-btn" data-lang="de" title="Deutsch">🇩🇪</button>
+        <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+        <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+      </div>
 
       <!-- Desktop Search -->
       <div class="nav-search-wrap">
-        <input type="search" id="navSearch" class="nav-search-input" placeholder="🔍 Produkte suchen…" autocomplete="off" />
+        <input type="search" id="navSearch" class="nav-search-input" placeholder="🔍 Zoek producten…" data-i18n-ph="search.placeholder" autocomplete="off" />
       </div>
 
       <div class="navbar-right">
-        <button class="cart-btn" id="cartBtn" aria-label="Warenkorb öffnen">
+        <button class="cart-btn" id="cartBtn" aria-label="Winkelwagen">
           🛒
           <span class="cart-badge" id="cartBadge" style="display:none">0</span>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+        <button class="hamburger" id="hamburger" aria-label="Menu openen">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -79,50 +92,69 @@
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobiles Menü">
     <div class="mobile-menu-header">
       <div class="logo">
-        <div class="logo-stars"><span class="star s1">★</span><span class="star s2">★</span><span class="star s3">★</span></div>
-        <div class="logo-text"><span class="logo-main">Estrellas</span><span class="logo-sub">de colores</span></div>
+        <div class="logo-brand">
+          <div class="logo-row1">
+            <span class="lstark" style="color:#E91E8C">★</span>
+            <span class="logo-main">Estrellas</span>
+            <span class="lstark" style="color:#4CAF50;font-size:.55em;vertical-align:super">★</span>
+          </div>
+          <div class="logo-row2">
+            <span class="lstark" style="color:#2196F3;font-size:.5em">★</span>
+            <span class="logo-sub">de colores</span>
+            <span class="lstark ldot" style="color:#FF9800">●</span>
+          </div>
+          <span class="logo-kindermode">KINDERMODE</span>
+        </div>
       </div>
-      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menü schließen">✕</button>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menu sluiten">✕</button>
+    </div>
+
+    <!-- Mobile Language Switcher -->
+    <div class="mobile-lang-row">
+      <button class="lang-btn active" data-lang="nl" title="Nederlands">🇳🇱 NL</button>
+      <button class="lang-btn" data-lang="de" title="Deutsch">🇩🇪 DE</button>
+      <button class="lang-btn" data-lang="en" title="English">🇬🇧 EN</button>
+      <button class="lang-btn" data-lang="es" title="Español">🇪🇸 ES</button>
     </div>
 
     <!-- Mobile Search -->
     <div class="mobile-search-wrap">
-      <input type="search" id="mobileSearch" class="mobile-search-input" placeholder="🔍 Produkte suchen…" autocomplete="off" />
+      <input type="search" id="mobileSearch" class="mobile-search-input" placeholder="🔍 Zoek producten…" data-i18n-ph="search.placeholder" autocomplete="off" />
     </div>
 
     <div class="mobile-menu-body">
-      <a href="#home" class="mobile-nav-item" data-close>🏠 Home</a>
+      <a href="#home" class="mobile-nav-item" data-close data-i18n-mob="nav.home">🏠 Home</a>
 
-      <div class="mobile-section-title">Kollektion</div>
+      <div class="mobile-section-title" data-i18n="nav.collection">Collectie</div>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="alle" data-close>
-        <span class="mobile-cat-icon" style="background:#f3e5f5">✨</span> Alle Produkte
+        <span class="mobile-cat-icon" style="background:#f3e5f5">✨</span> <span data-i18n="cat.all.text">Alle producten</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="maedchen" data-close>
-        <span class="mobile-cat-icon" style="background:#fce4ec">👗</span> Mädchen
+        <span class="mobile-cat-icon" style="background:#fce4ec">👗</span> <span data-i18n="cat.maedchen">Meisjes</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="kleider" data-close>
-        <span class="mobile-cat-icon" style="background:#fce4ec">👒</span> Kleider
+        <span class="mobile-cat-icon" style="background:#fce4ec">👒</span> <span data-i18n="cat.kleider">Jurken</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="jungen" data-close>
-        <span class="mobile-cat-icon" style="background:#e3f2fd">👕</span> Jungen
+        <span class="mobile-cat-icon" style="background:#e3f2fd">👕</span> <span data-i18n="cat.jungen">Jongens</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="baby" data-close>
-        <span class="mobile-cat-icon" style="background:#fff9c4">🍼</span> Baby (0–2 J.)
+        <span class="mobile-cat-icon" style="background:#fff9c4">🍼</span> <span data-i18n="cat.baby.label">Baby (0–2 j.)</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="kleinkind" data-close>
-        <span class="mobile-cat-icon" style="background:#e8f5e9">🧒</span> Kleinkind (2–4 J.)
+        <span class="mobile-cat-icon" style="background:#e8f5e9">🧒</span> <span data-i18n="cat.kleinkind.label">Kleuter (2–4 j.)</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="jogginghosen" data-close>
-        <span class="mobile-cat-icon" style="background:#e8eaf6">🩳</span> Jogginghosen
+        <span class="mobile-cat-icon" style="background:#e8eaf6">🩳</span> <span data-i18n="cat.jogginghosen">Joggingbroeken</span>
       </a>
       <a href="#shop" class="mobile-nav-item cat-link" data-filter="accessoires" data-close>
-        <span class="mobile-cat-icon" style="background:#fce4ec">🎀</span> Accessoires
+        <span class="mobile-cat-icon" style="background:#fce4ec">🎀</span> <span data-i18n="cat.accessoires">Accessoires</span>
       </a>
 
       <div class="mobile-section-title">Info</div>
-      <a href="#ueber-uns"  class="mobile-nav-item" data-close>💜 Über uns</a>
-      <a href="#bewertungen" class="mobile-nav-item" data-close>⭐ Bewertungen</a>
-      <a href="kontakt.html" class="mobile-nav-item" data-close>📞 Kontakt & Standort</a>
+      <a href="#ueber-uns"   class="mobile-nav-item" data-close>💜 <span data-i18n="nav.about">Over ons</span></a>
+      <a href="#bewertungen" class="mobile-nav-item" data-close>⭐ <span data-i18n="nav.reviews">Beoordelingen</span></a>
+      <a href="kontakt.html" class="mobile-nav-item" data-close>📞 <span data-i18n="nav.contact">Contact</span></a>
     </div>
 
     <div class="mobile-menu-footer">
@@ -146,25 +178,15 @@
       <span class="floating-star fs8">●</span>
     </div>
     <div class="hero-content">
-      <p class="hero-label">✨ Neue Kollektion 2025 ist da!</p>
       <h1 class="hero-title">
-        Kindermode die<br/>
-        <span class="highlight-purple">begeistert</span>
-        <span class="highlight-script"> & strahlt</span>
+        <span data-i18n="hero.title.main">Kindermode die</span><br/>
+        <span class="highlight-purple" data-i18n="hero.title.hl">schittert</span>
+        <span class="highlight-script" data-i18n="hero.title.script"> &amp; straalt</span>
       </h1>
-      <p class="hero-sub">
-        Kleider, Jogginghosen, Baby & mehr – liebevoll ausgewählt für Kinder von 0 bis 14 Jahren.
-        Jeden Samstag geöffnet im Herzen von Swolgen.
-      </p>
+      <p class="hero-sub" data-i18n="hero.sub">Jurken, joggingbroeken, baby &amp; meer – met liefde geselecteerd voor kinderen van 0 tot 14 jaar.</p>
       <div class="hero-buttons">
-        <a href="#shop" class="btn btn-primary">Jetzt entdecken →</a>
-        <a href="kontakt.html" class="btn btn-outline">Schreib uns</a>
-      </div>
-      <div class="hero-badges">
-        <div class="badge"><span>👶</span> 0–14 Jahre</div>
-        <div class="badge"><span>🕙</span> Sa 10–15 Uhr</div>
-        <div class="badge"><span>📍</span> Swolgen, NL</div>
-        <div class="badge"><span>💜</span> Persönliche Beratung</div>
+        <a href="#shop"        class="btn btn-primary"  data-i18n="hero.btn.discover">★ Nu ontdekken</a>
+        <a href="kontakt.html" class="btn btn-outline"  data-i18n="hero.btn.contact">Schrijf ons</a>
       </div>
     </div>
     <div class="hero-image">
@@ -217,14 +239,14 @@
   ============================================================ -->
   <nav class="cat-strip" aria-label="Kategorien">
     <div class="cat-strip-inner">
-      <a href="#shop" class="cat-pill" data-filter="alle">✨ Alle</a>
-      <a href="#shop" class="cat-pill" data-filter="kleider">👗 Kleider</a>
-      <a href="#shop" class="cat-pill" data-filter="jogginghosen">🩳 Jogginghosen</a>
-      <a href="#shop" class="cat-pill" data-filter="maedchen">👗 Mädchen</a>
-      <a href="#shop" class="cat-pill" data-filter="jungen">👕 Jungen</a>
-      <a href="#shop" class="cat-pill" data-filter="baby">🍼 Baby</a>
-      <a href="#shop" class="cat-pill" data-filter="kleinkind">🧒 Kleinkind</a>
-      <a href="#shop" class="cat-pill" data-filter="accessoires">🎀 Accessoires</a>
+      <a href="#shop" class="cat-pill" data-filter="alle"         data-i18n-html="cat.pill.all">✨ Alle</a>
+      <a href="#shop" class="cat-pill" data-filter="kleider"      data-i18n-html="cat.pill.kleider">👗 Jurken</a>
+      <a href="#shop" class="cat-pill" data-filter="jogginghosen" data-i18n-html="cat.pill.jogginghosen">🩳 Joggingbroeken</a>
+      <a href="#shop" class="cat-pill" data-filter="maedchen"     data-i18n-html="cat.pill.maedchen">👗 Meisjes</a>
+      <a href="#shop" class="cat-pill" data-filter="jungen"       data-i18n-html="cat.pill.jungen">👕 Jongens</a>
+      <a href="#shop" class="cat-pill" data-filter="baby"         data-i18n-html="cat.pill.baby">🍼 Baby</a>
+      <a href="#shop" class="cat-pill" data-filter="kleinkind"    data-i18n-html="cat.pill.kleinkind">🧒 Kleuter</a>
+      <a href="#shop" class="cat-pill" data-filter="accessoires"  data-i18n-html="cat.pill.accessoires">🎀 Accessoires</a>
     </div>
   </nav>
 
@@ -848,64 +870,81 @@
   <!-- ============================================================
        ÜBER UNS
   ============================================================ -->
-  <section class="section" id="ueber-uns">
+  <!-- ============================================================
+       ÜBER UNS – groot & visueel
+  ============================================================ -->
+  <section class="about-section" id="ueber-uns">
+    <!-- Decoratieve sterren achtergrond -->
+    <div class="about-bg-stars" aria-hidden="true">
+      <span style="color:#E91E8C;top:8%;left:6%;font-size:2rem">★</span>
+      <span style="color:#2196F3;top:15%;right:10%;font-size:1.4rem">★</span>
+      <span style="color:#F5A623;top:70%;left:4%;font-size:1.8rem">★</span>
+      <span style="color:#4CAF50;top:80%;right:8%;font-size:1.2rem">★</span>
+      <span style="color:#9C27B0;top:40%;left:2%;font-size:1rem">●</span>
+      <span style="color:#FF5722;top:55%;right:5%;font-size:1.5rem">★</span>
+      <span style="color:#00BCD4;top:25%;left:15%;font-size:.9rem">●</span>
+      <span style="color:#FFEB3B;top:90%;left:30%;font-size:1.3rem">★</span>
+    </div>
+
     <div class="container">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-card-main">
-            <div class="about-store-img">
-              <div class="store-icon">🏪</div>
-              <p>Estrellas de Colores</p>
-              <span>Swolgen, Niederlande</span>
+      <!-- Header -->
+      <div class="about-header">
+        <span class="section-tag" data-i18n="about.tag">Over ons</span>
+        <h2 class="about-big-title" data-i18n="about.title">Hallo, ik ben Carolina!</h2>
+        <p class="about-tagline" data-i18n="about.lead">Met veel liefde en passie heb ik Estrellas de Colores opgericht – het adres voor stijlvolle en betaalbare kindermode in Swolgen.</p>
+      </div>
+
+      <!-- Grote visuele sectie -->
+      <div class="about-visual-big">
+        <div class="about-store-card">
+          <div class="about-store-inner">
+            <div class="about-logo-big">
+              <div class="logo-row1"><span class="lstark" style="color:#E91E8C;font-size:1.5rem">★</span><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:2.2rem;color:#5B2D8E">Estrellas</span><span class="lstark" style="color:#4CAF50;font-size:1rem">★</span></div>
+              <div class="logo-row2"><span class="lstark" style="color:#2196F3;font-size:.8rem">★</span><span style="font-family:'Dancing Script',cursive;font-size:1.6rem;background:linear-gradient(90deg,#e91e8c,#ff9800,#4caf50,#2196f3,#9c27b0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">de colores</span><span style="color:#FF9800;font-size:.7rem">●</span></div>
+              <div style="font-size:.6rem;font-weight:800;letter-spacing:.15em;color:#2196F3;text-transform:uppercase;margin-top:2px">KINDERMODE</div>
             </div>
-          </div>
-          <div class="about-card-float">
-            <span class="float-icon">⭐</span>
-            <strong>Seit 2024 offen</strong>
-          </div>
-          <div class="about-card-float about-card-float2">
-            <span class="float-icon">👧</span>
-            <strong>0 bis 14 Jahre</strong>
-          </div>
-          <div class="about-stars-deco" aria-hidden="true">
-            <span style="color:#E91E8C">★</span>
-            <span style="color:#F5A623">★</span>
-            <span style="color:#2196F3">●</span>
-            <span style="color:#4CAF50">★</span>
+            <div class="about-store-stats">
+              <div class="astat"><strong>200+</strong><span data-i18n="about.stat.items">artikelen</span></div>
+              <div class="astat"><strong>2024</strong><span data-i18n="about.stat.since">opgericht</span></div>
+              <div class="astat"><strong>⭐ 5,0</strong><span data-i18n="about.stat.rating">beoordeling</span></div>
+              <div class="astat"><strong>0–14</strong><span data-i18n="about.stat.age">jaar</span></div>
+            </div>
           </div>
         </div>
-        <div class="about-content">
-          <span class="section-tag">Über uns</span>
-          <h2>Hallo, ich bin Carolina!</h2>
-          <p class="about-lead">
-            Mit viel Liebe und Leidenschaft habe ich <strong>Estrellas de Colores</strong> gegründet –
-            die Adresse für stilvolle und erschwingliche Kindermode in Swolgen.
-          </p>
-          <p>
-            Als Mutter weiß ich, wie wichtig es ist, dass Kinderkleidung nicht nur schön ist,
-            sondern auch bequem und langlebig. In unserem Geschäft findest du eine sorgfältig
-            zusammengestellte Kollektion für Mädchen, Jungen und Babys von 0 bis 14 Jahren.
-          </p>
-          <p>
-            Jede Woche kommen neue Stücke rein – von fröhlichen Alltagsoutfits bis hin zu
-            besonderen Anlässen. Komm samstags vorbei und lass dich persönlich beraten!
-          </p>
-          <div class="about-highlights">
-            <div class="about-hl">
-              <span class="hl-icon" style="background:#fce4ec">💕</span>
-              <div><strong>Mit Herz & Seele</strong><p>Jedes Stück persönlich ausgesucht</p></div>
-            </div>
-            <div class="about-hl">
-              <span class="hl-icon" style="background:#e3f2fd">🎨</span>
-              <div><strong>Bunt & verspielt</strong><p>Mode, die zu Kindern passt</p></div>
-            </div>
-            <div class="about-hl">
-              <span class="hl-icon" style="background:#e8f5e9">🌿</span>
-              <div><strong>Qualität zuerst</strong><p>Weiche Stoffe, faire Preise</p></div>
-            </div>
-          </div>
-          <a href="kontakt.html" class="btn btn-primary">Besuch uns!</a>
+
+        <div class="about-quote-card">
+          <span class="about-quote-mark">"</span>
+          <p class="about-quote-text" data-i18n="about.quote">Elk stuk dat ik in de winkel hang, heb ik persoonlijk uitgekozen — met liefde voor kinderen en oog voor kwaliteit.</p>
+          <span class="about-quote-author">— Carolina</span>
         </div>
+      </div>
+
+      <!-- Highlights rij -->
+      <div class="about-highlights-big">
+        <div class="about-hl-card">
+          <span class="ahl-icon" style="background:#fce4ec">💕</span>
+          <strong data-i18n="about.hl1.title">Met hart &amp; ziel</strong>
+          <p data-i18n="about.hl1.sub">Elk stuk persoonlijk uitgekozen</p>
+        </div>
+        <div class="about-hl-card">
+          <span class="ahl-icon" style="background:#e3f2fd">🎨</span>
+          <strong data-i18n="about.hl2.title">Kleurrijk &amp; speels</strong>
+          <p data-i18n="about.hl2.sub">Mode die bij kinderen past</p>
+        </div>
+        <div class="about-hl-card">
+          <span class="ahl-icon" style="background:#e8f5e9">🌿</span>
+          <strong data-i18n="about.hl3.title">Kwaliteit eerst</strong>
+          <p data-i18n="about.hl3.sub">Zachte stoffen, eerlijke prijzen</p>
+        </div>
+        <div class="about-hl-card">
+          <span class="ahl-icon" style="background:#fff9c4">🗓️</span>
+          <strong data-i18n="about.hl4.title">Elke zaterdag</strong>
+          <p data-i18n="about.hl4.sub">10:00 – 15:00 uur · Swolgen</p>
+        </div>
+      </div>
+
+      <div class="about-cta">
+        <a href="kontakt.html" class="btn btn-primary" data-i18n="about.btn">★ Bezoek ons!</a>
       </div>
     </div>
   </section>
